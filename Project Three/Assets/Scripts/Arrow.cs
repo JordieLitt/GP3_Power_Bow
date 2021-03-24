@@ -41,6 +41,7 @@ public class Arrow : MonoBehaviour
             hitSomething = true;
             Stick();
             PlayerTransform.position = TeleportGoal.position;
+            Destroy(gameObject);
         }
     }
 

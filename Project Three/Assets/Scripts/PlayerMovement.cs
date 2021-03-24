@@ -8,15 +8,19 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player2Prefab;
     public GameObject player;
     private GameObject player2;
+    private Animator anim;
 
     Rigidbody rigidbody3D;
     public float speed = 12f;
 
     private bool abilityActive = false;
 
+    public bool isOnGround = true;
+
     void Start()
     {
         rigidbody3D = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,21 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
+
+        if(move != Vector3.zero && !Input.GetKey(KeyCode.Space))
+        {
+            //run
+            anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+        }
+        else if(move != Vector3.zero && Input.GetKey(KeyCode.Space))
+        {
+            //Jump
+        }
+        else if(move == Vector3.zero)
+        {
+            //Idle
+            anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+        }
 
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
         {
@@ -42,5 +61,22 @@ public class PlayerMovement : MonoBehaviour
         player.transform.position = player2.transform.position;
         Destroy(player2.gameObject);
         abilityActive = false;
+    }
+
+    void FixedUpdate()
+    {
+        if(Input.GetButtonDown("Jump"))
+        {
+            rigidbody3D.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+            isOnGround = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Ground")
+        {
+            isOnGround = true;
+        }
     }
 }

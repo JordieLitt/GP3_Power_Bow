@@ -15,12 +15,7 @@ public class ThridPersonCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void LateUpdate()
-    {
-        CamControl();
-    }
-
-    void CamControl()
+    void FixedUpdate()
     {
         mouseX += Input.GetAxis("Mouse X") * RotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * RotationSpeed;
