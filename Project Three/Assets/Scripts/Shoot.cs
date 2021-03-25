@@ -10,9 +10,12 @@ public class Shoot : MonoBehaviour
     public Transform arrowSpawn;
     public float shootForce = 20f;
     public float shootForce2 = 20f;
+    public GameObject misdirection;
     
     public LineRenderer lineVisual;
     public int lineSegment;
+
+    public Material mat1, mat2, mat3;
 
     public bool isHoldingDown1 = false;
     public bool isHoldingDown2 = false;
@@ -33,6 +36,7 @@ public class Shoot : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             isHoldingDown1 = true;
+            lineVisual.material = mat1;
         }
 
         if(isHoldingDown1 == true)
@@ -51,9 +55,15 @@ public class Shoot : MonoBehaviour
             isHoldingDown1 = false;
         }
 
+        if(isHoldingDown1 == false && isHoldingDown2 == false)
+        {
+            lineVisual.material = mat3;
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             isHoldingDown2 = true;
+            lineVisual.material = mat2;
         }
 
         if(isHoldingDown2 == true)
@@ -70,6 +80,11 @@ public class Shoot : MonoBehaviour
             Rigidbody rb = go.GetComponent<Rigidbody>();
             rb.velocity = cam.transform.forward * shootForce;
             isHoldingDown2 = false;
+        }
+
+        if(isHoldingDown2 == false && isHoldingDown1 == false)
+        {
+            lineVisual.material = mat3;
         }
     }
 

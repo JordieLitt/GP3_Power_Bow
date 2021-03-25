@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
         player.transform.position = player2.transform.position;
         Destroy(player2.gameObject);
         abilityActive = false;
