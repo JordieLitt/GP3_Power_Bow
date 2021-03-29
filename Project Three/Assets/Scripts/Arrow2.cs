@@ -38,6 +38,11 @@ public class Arrow2 : MonoBehaviour
             hitSomething = true;
             Stick();
         }
+
+        if(collision.collider.tag == "Target1")
+        {
+            lifeTimer2 = 15f;
+        }
     }
 
     private void Stick()

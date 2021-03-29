@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
@@ -16,12 +17,20 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     private bool abilityActive = false;
 
-    
+    public GameObject pressurePlate1;
+    public GameObject pressurePlate2;
+    public bool onTop1 = false;
+    public bool onTop2 = false;
+
+    AudioSource audioSource;
+    public AudioClip run;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,7 +39,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
         {
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
-            player2.transform.Rotate(-90, 0, 0);
+            player2.transform.Rotate(0, 0, 0);
             StartCoroutine(ResetPosition());
         }
 
@@ -60,6 +69,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         {
             //run
             anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+            PlaySound(run);
         } 
         else if(playerMovement == Vector3.zero)
         {
@@ -67,16 +77,48 @@ public class ThirdPersonCharacterController : MonoBehaviour
             anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
         }
     }
+    
 
     
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Ground")
+        if(collision.gameObject.tag == "Ground")
         {
             isOnGround = true;
         }
+
+        if(collision.gameObject.tag == "PPlate1")
+        {
+            onTop1 = true;
+        }
+
+        if(collision.gameObject.tag == "PPlate2")
+        {
+            onTop2 = true;
+        }
+
+        
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.tag =="killBox")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("LossMenu");
+            
+        }
+        if(col.gameObject.tag =="Crystal")
+        {
+           
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("WinMenu");
+            
+        }
+    }
+    
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
@@ -106,5 +148,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
     // yield return new WaitForSeconds(0.9f);
     // anim.SetLayerWeight(anim.GetLayerIndex("Attack Layer"), 1);   
     // }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

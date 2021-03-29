@@ -16,11 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private bool abilityActive = false;
 
     public bool isOnGround = true;
+    AudioSource audioSource;
+    public AudioClip run;
 
     void Start()
     {
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
         {
             //run
             anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+            PlaySound(run);
+
         }
         else if(move != Vector3.zero && Input.GetKey(KeyCode.Space))
         {
@@ -50,14 +55,14 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
         {
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
-            player2.transform.Rotate(-90, 0, 0);
+            player2.transform.Rotate(0, 0 ,0);
             StartCoroutine(ResetPosition());
         }
     }
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(10);
         player.transform.position = player2.transform.position;
         Destroy(player2.gameObject);
         abilityActive = false;
@@ -78,5 +83,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnGround = true;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

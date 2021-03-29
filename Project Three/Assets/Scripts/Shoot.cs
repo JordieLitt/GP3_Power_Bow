@@ -10,7 +10,6 @@ public class Shoot : MonoBehaviour
     public Transform arrowSpawn;
     public float shootForce = 20f;
     public float shootForce2 = 20f;
-    public GameObject misdirection;
     
     public LineRenderer lineVisual;
     public int lineSegment;
