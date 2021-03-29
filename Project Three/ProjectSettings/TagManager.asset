@@ -6,6 +6,20 @@ TagManager:
   tags:
   - Arrow
   - Ground
+  - PPlate1
+  - PPlate2
+  - Target1
+  - Arrow2
+  - plate2
+  - plate1
+  - gatetar1
+  - gatetar2
+  - gatetar3
+  - gatetar4
+  - PlatformLow
+  - Astra2
+  - killBox
+  - Crystal
   layers:
   - Default
   - TransparentFX
