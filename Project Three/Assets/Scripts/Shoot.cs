@@ -19,9 +19,15 @@ public class Shoot : MonoBehaviour
     public bool isHoldingDown1 = false;
     public bool isHoldingDown2 = false;
 
+    //Audio
+    AudioSource audioSource;
+    public AudioClip drawBow;
+    public AudioClip normalShot;
+
     void Start()
     {
         lineVisual.positionCount = lineSegment;
+        audioSource= GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -36,6 +42,7 @@ public class Shoot : MonoBehaviour
         {
             isHoldingDown1 = true;
             lineVisual.material = mat1;
+            PlaySound(drawBow);
         }
 
         if(isHoldingDown1 == true)
@@ -52,6 +59,7 @@ public class Shoot : MonoBehaviour
             Rigidbody rb2 = go2.GetComponent<Rigidbody>();
             rb2.velocity = cam.transform.forward * shootForce2;
             isHoldingDown1 = false;
+            PlaySound(normalShot);
         }
 
         if(isHoldingDown1 == false && isHoldingDown2 == false)
@@ -63,6 +71,7 @@ public class Shoot : MonoBehaviour
         {
             isHoldingDown2 = true;
             lineVisual.material = mat2;
+            PlaySound(drawBow);
         }
 
         if(isHoldingDown2 == true)
@@ -79,6 +88,7 @@ public class Shoot : MonoBehaviour
             Rigidbody rb = go.GetComponent<Rigidbody>();
             rb.velocity = cam.transform.forward * shootForce;
             isHoldingDown2 = false;
+            PlaySound(normalShot);
         }
 
         if(isHoldingDown2 == false && isHoldingDown1 == false)
@@ -107,5 +117,10 @@ public class Shoot : MonoBehaviour
         result.y = sY;
 
         return result;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

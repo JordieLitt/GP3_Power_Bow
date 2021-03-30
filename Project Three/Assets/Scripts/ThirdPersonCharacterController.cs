@@ -134,20 +134,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
     bool isDrawing = Input.GetMouseButton(0) || Input.GetMouseButton(1);
 
     anim.SetBool("isDrawing", isDrawing);
-    
-    // if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-    // {
-    // anim.SetLayerWeight(anim.GetLayerIndex("Attack Layer"), 1);
-    // anim.SetTrigger("DrawArrow");
-    // }
-            
-    // if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-    // {
-    //     anim.SetTrigger("LooseArrow");
-    
-    // yield return new WaitForSeconds(0.9f);
-    // anim.SetLayerWeight(anim.GetLayerIndex("Attack Layer"), 1);   
-    // }
     }
 
     public void PlaySound(AudioClip clip)

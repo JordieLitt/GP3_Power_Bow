@@ -8,6 +8,7 @@ public class Arrow2 : MonoBehaviour
     private float lifeTimer2 = 5f;
     private float timer2;
     private bool hitSomething = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -49,4 +50,5 @@ public class Arrow2 : MonoBehaviour
     {
         myBody.constraints = RigidbodyConstraints.FreezeAll;
     }
+
 }
