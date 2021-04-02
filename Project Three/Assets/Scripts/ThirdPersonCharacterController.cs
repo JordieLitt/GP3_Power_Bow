@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
@@ -25,17 +26,71 @@ public class ThirdPersonCharacterController : MonoBehaviour
     AudioSource audioSource;
     public AudioClip run;
 
+    public float distanceAhead;
+    public float distanceAhead2;
+    public GameObject message;
+    public bool inRange = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
+        message.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit2;
+        Vector3 forward2 = transform.TransformDirection(Vector3.forward) * distanceAhead2;
+        Debug.DrawRay(transform.position, forward2, Color.blue);
+
+        if(Physics.Raycast(transform.position,(forward2), out hit2))
+        {
+            if(hit2.collider.tag == "Crystal")
+            {
+                inRange = true;
+            }
+
+            else
+            {
+                inRange = false;
+            }
+        }   
+
+        if(inRange == false)
+        {
+            message.SetActive(false);
+        }
+
+        if(inRange == true)
+        {
+            message.SetActive(true);
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * distanceAhead;
+            Debug.DrawRay(transform.position, forward, Color.green);
+
+            if(Physics.Raycast(transform.position,(forward), out hit))
+            {
+                if(hit.collider.tag == "Crystal")
+                {
+                    print("Found crystal");
+                    SceneManager.LoadScene("WinMenu");
+                }
+
+                else
+                {
+                    print("Have not found crystal");
+                }
+            }
+        }
+        
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
         {
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
@@ -107,14 +162,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadScene("LossMenu");
-            
-        }
-        if(col.gameObject.tag =="Crystal")
-        {
-           
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadScene("WinMenu");
             
         }
     }
