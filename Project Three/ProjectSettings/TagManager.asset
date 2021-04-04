@@ -20,6 +20,9 @@ TagManager:
   - Astra2
   - killBox
   - Crystal
+  - 'portal1 '
+  - portal2
+  - pickup
   layers:
   - Default
   - TransparentFX

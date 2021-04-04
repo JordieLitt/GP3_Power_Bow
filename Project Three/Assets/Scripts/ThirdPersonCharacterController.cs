@@ -30,6 +30,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public float distanceAhead2;
     public GameObject message;
     public bool inRange = false;
+    public bool pickup = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Update()
     {
         RaycastHit hit2;
-        Vector3 forward2 = transform.TransformDirection(Vector3.forward) * distanceAhead2;
+        Vector3 forward2 = transform.TransformDirection(Vector3.up * 0.75f) * distanceAhead2;
         Debug.DrawRay(transform.position, forward2, Color.blue);
 
         if(Physics.Raycast(transform.position,(forward2), out hit2))
@@ -73,7 +74,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
-            Vector3 forward = transform.TransformDirection(Vector3.forward) * distanceAhead;
+            Vector3 forward = transform.TransformDirection(Vector3.up * 0.75f) * distanceAhead;
             Debug.DrawRay(transform.position, forward, Color.green);
 
             if(Physics.Raycast(transform.position,(forward), out hit))
@@ -151,8 +152,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
         {
             onTop2 = true;
         }
-
-        
     }
 
     void OnTriggerEnter(Collider col)
@@ -164,6 +163,23 @@ public class ThirdPersonCharacterController : MonoBehaviour
             SceneManager.LoadScene("LossMenu");
             
         }
+
+        if(col.gameObject.tag =="portal1")
+        {
+            SceneManager.LoadScene("Forest Level");
+        }
+
+        if(col.gameObject.tag =="portal2")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
+        if(col.gameObject.tag == "pickup")
+        {
+            pickup = true;
+        }
+
+
     }
     
     private IEnumerator ResetPosition()
