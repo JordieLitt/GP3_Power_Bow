@@ -17,6 +17,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public float speed = 12f;
 
     private bool abilityActive = false;
+    public bool unlockedAstral = false;
 
     public GameObject pressurePlate1;
     public GameObject pressurePlate2;
@@ -92,7 +93,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
             }
         }
         
-        if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
+        if(Input.GetKeyDown(KeyCode.Q) && !abilityActive && unlockedAstral == true)
         {
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
             player2.transform.Rotate(0, 0, 0);
@@ -177,6 +178,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject.tag == "pickup")
         {
             pickup = true;
+            Destroy(col.gameObject);
         }
 
 

@@ -1,10 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class float2plat : MonoBehaviour
 {
-    
     public GameObject target;
 
     void Start()
