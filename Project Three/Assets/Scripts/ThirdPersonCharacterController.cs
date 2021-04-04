@@ -164,14 +164,14 @@ public class ThirdPersonCharacterController : MonoBehaviour
             
         }
 
-        if(col.gameObject.tag =="portal1")
+        if(col.gameObject.name =="portal1")
         {
             SceneManager.LoadScene("Forest Level");
         }
 
         if(col.gameObject.tag =="portal2")
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("IceBockout");
         }
 
         if(col.gameObject.tag == "pickup")

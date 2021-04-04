@@ -20,10 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 407faaec37d1a9a488baef40b45304d0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Art ProtoType.unity
     guid: 3f219e1ec2642014489645e37a34a8a2
   m_configObjects: {}
