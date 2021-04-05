@@ -1259,6 +1259,7 @@ GameObject:
   - component: {fileID: 4232076949670305118}
   - component: {fileID: 4232076949670305117}
   - component: {fileID: 4232076949670305116}
+  - component: {fileID: -329023984380452445}
   m_Layer: 0
   m_Name: 1 Astra y Bow 1
   m_TagString: Player
@@ -1340,6 +1341,23 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 12
   isOnGround: 1
+  run: {fileID: 0}
+--- !u!111 &-329023984380452445
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925505282309602903}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3e65e904bacb0ae48bf0754e52422697, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3e65e904bacb0ae48bf0754e52422697, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3961711077153507333
 GameObject:
   m_ObjectHideFlags: 0
