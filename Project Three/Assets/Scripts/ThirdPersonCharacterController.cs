@@ -8,15 +8,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     public bool isOnGround = true;
 
-    public GameObject player2Prefab;
-    public GameObject player;
-    private GameObject player2;
     private Animator anim;
 
     Rigidbody rigidbody3D;
     public float speed = 12f;
-
-    private bool abilityActive = false;
 
     public GameObject pressurePlate1;
     public GameObject pressurePlate2;
@@ -91,15 +86,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 }
             }
         }
-        
-        if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
-        {
-            player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
-            player2.transform.Rotate(0, 0, 0);
-            StartCoroutine(ResetPosition());
-        }
 
-            AttackAni();
+        AttackAni();
     
     }
 
@@ -173,15 +161,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
         {
             SceneManager.LoadScene("IceBlockout");
         }
-    }
-    
-    private IEnumerator ResetPosition()
-    {
-        abilityActive = true;
-        yield return new WaitForSeconds(10);
-        player.transform.position = player2.transform.position;
-        Destroy(player2.gameObject);
-        abilityActive = false;
     }
 
     private void AttackAni()
