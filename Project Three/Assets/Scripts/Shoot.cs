@@ -20,14 +20,14 @@ public class Shoot : MonoBehaviour
     public bool isHoldingDown2 = false;
 
     //Audio
-    AudioSource audioSource;
+    AudioSource bowAudioSource;
     public AudioClip drawBow;
     public AudioClip normalShot;
 
     void Start()
     {
         lineVisual.positionCount = lineSegment;
-        audioSource= GetComponent<AudioSource>();
+        bowAudioSource= GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -121,6 +121,6 @@ public class Shoot : MonoBehaviour
 
     public void PlaySound(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        bowAudioSource.PlayOneShot(clip);
     }
 }
