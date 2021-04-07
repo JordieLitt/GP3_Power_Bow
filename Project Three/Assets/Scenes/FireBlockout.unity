@@ -1234,6 +1234,11 @@ PrefabInstance:
       propertyPath: gate
       value: 
       objectReference: {fileID: 566193514}
+    - target: {fileID: 8043555574951420265, guid: 7f6d019485197204a8ca6b9dff54bf45,
+        type: 3}
+      propertyPath: symbol
+      value: 
+      objectReference: {fileID: 890384279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f6d019485197204a8ca6b9dff54bf45, type: 3}
 --- !u!1 &299593361 stripped
@@ -1825,6 +1830,11 @@ PrefabInstance:
       propertyPath: gate
       value: 
       objectReference: {fileID: 566193514}
+    - target: {fileID: 8043555574951420265, guid: 7f6d019485197204a8ca6b9dff54bf45,
+        type: 3}
+      propertyPath: symbol
+      value: 
+      objectReference: {fileID: 592212646}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f6d019485197204a8ca6b9dff54bf45, type: 3}
 --- !u!1001 &427711595
@@ -3025,7 +3035,7 @@ PrefabInstance:
     - target: {fileID: 2587628247226892731, guid: e598bec6961d0474eab1aff5b082d3bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.3
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 2587628247226892731, guid: e598bec6961d0474eab1aff5b082d3bb,
         type: 3}
@@ -3259,7 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steppedOn: 0
---- !u!135 &941202457
+--- !u!135 &941202454
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3271,7 +3281,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.3813262
-  m_Center: {x: -0.00000011920929, y: 5.8, z: -100.32}
+  m_Center: {x: -0.00000011920929, y: 6.05, z: -100.71}
 --- !u!114 &941202458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5495,7 +5505,7 @@ PrefabInstance:
     - target: {fileID: 753467355344796623, guid: b140b6fc15f3d32419dd09051bfc82d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: 3.3999999
       objectReference: {fileID: 0}
     - target: {fileID: 753467355344796623, guid: b140b6fc15f3d32419dd09051bfc82d6,
         type: 3}
@@ -5626,6 +5636,11 @@ PrefabInstance:
       propertyPath: gate
       value: 
       objectReference: {fileID: 566193514}
+    - target: {fileID: 8043555574951420265, guid: 7f6d019485197204a8ca6b9dff54bf45,
+        type: 3}
+      propertyPath: symbol
+      value: 
+      objectReference: {fileID: 2052439776}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f6d019485197204a8ca6b9dff54bf45, type: 3}
 --- !u!1001 &1921920754

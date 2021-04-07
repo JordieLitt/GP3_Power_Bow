@@ -55,7 +55,7 @@ public class Shoot : MonoBehaviour
         
         if(Input.GetMouseButtonUp(0))
         {
-            GameObject go2 = Instantiate(arrowPrefab2, arrowSpawn.position, Quaternion.identity);
+            GameObject go2 = Instantiate(arrowPrefab2, arrowSpawn.position, Quaternion.Euler(90, 0, 0));
             Rigidbody rb2 = go2.GetComponent<Rigidbody>();
             rb2.velocity = cam.transform.forward * shootForce2;
             isHoldingDown1 = false;
@@ -84,7 +84,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
-            GameObject go = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.identity);
+            GameObject go = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.Euler(90, 0, 0));
             Rigidbody rb = go.GetComponent<Rigidbody>();
             rb.velocity = cam.transform.forward * shootForce;
             isHoldingDown2 = false;
