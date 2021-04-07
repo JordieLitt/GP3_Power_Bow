@@ -8,6 +8,8 @@ public class MaterialChange : MonoBehaviour
 
     public bool abilityActive = false;
 
+    public bool astralUnlock;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,17 @@ public class MaterialChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && !abilityActive)
+        if(Input.GetKeyDown(KeyCode.Q) && !abilityActive && astralUnlock == true)
         {
             GetComponent<Renderer>().material = matAstral;
             StartCoroutine(ResetPosition());
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && abilityActive == true)
+        {
+            GetComponent<Renderer>().material = matNormal;
+            abilityActive = false;
+            StopCoroutine(ResetPosition());
         }
     }
 

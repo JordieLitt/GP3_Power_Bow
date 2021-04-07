@@ -10,6 +10,11 @@ public class PreasurePlatePlatforms : MonoBehaviour
     
 
     bool isDown = false;
+
+    void Start()
+    {
+        platforms.SetActive(false);
+    }
     
     void OnTriggerEnter(Collider col)
     {
@@ -19,21 +24,22 @@ public class PreasurePlatePlatforms : MonoBehaviour
         {
             steppedOnOne = true;
         }
+
         if( steppedOnOne == true && steppedOnTwo == true)
         {
-        if(!isDown)
-        {
-        platforms.transform.position -= new Vector3(0, 221,0);
-        isDown = true;
-        }
+            if(!isDown)
+            {
+                platforms.SetActive(true);
+                isDown = true;
+            }
         }
     }
 
     void OnTriggerEnter(SphereCollider col1)
     {
-    if(!steppedOnTwo)
-    {
-        steppedOnTwo = true;
-    }
+        if(!steppedOnTwo)
+        {
+            steppedOnTwo = true;
+        }
     }
 }

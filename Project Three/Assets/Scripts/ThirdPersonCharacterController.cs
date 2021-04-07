@@ -25,7 +25,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public float distanceAhead2;
     public GameObject message;
     public bool inRange = false;
-    public bool pickup = false;
 
     // Start is called before the first frame update
     void Start()

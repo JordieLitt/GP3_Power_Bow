@@ -23,6 +23,7 @@ TagManager:
   - 'portal1 '
   - portal2
   - pickup
+  - materialCh
   layers:
   - Default
   - TransparentFX
