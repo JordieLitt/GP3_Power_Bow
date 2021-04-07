@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ice gatewall
+  m_Name: ice wall
   m_Shader: {fileID: 4800000, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -24,19 +24,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 0679e7301c8b41147b8a1cceadb6cb45, type: 3}
+        m_Texture: {fileID: 2800000, guid: 00d3aabadbacf964387022599952c4c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 957791661a3194a40900abd891ebc456, type: 3}
+        m_Texture: {fileID: 2800000, guid: 491f483d79bfa4845a54f26935d19cc8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2a05f6a5ec5dd0a4aa428eb62f814044, type: 3}
+        m_Texture: {fileID: 2800000, guid: a2ce706d9f30c4b4e993447c9693b5eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 3bb2db04316c1ba44b9211d7ddeea6a3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 42f69621a26cd4f47b11b3afb1b3e4ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 58bc3fa6ab0252641972eb08dd7bc26e, type: 3}
+        m_Texture: {fileID: 2800000, guid: b031c5336afd1794b90688e5c5810837, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -83,7 +83,7 @@ Material:
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7787764893529054769
+--- !u!114 &7724992810785224434
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
