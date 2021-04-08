@@ -40,15 +40,20 @@ public class MainMenu : MonoBehaviour
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
    }
+   public void LoadGame()
+   {
+     SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+   }
 
    public void QuitGame()
    {
+      PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
        Application.Quit();
    }
 
      public void RestartGame()
    {
-       SceneManager.LoadScene("Forest Level");
+       SceneManager.LoadScene(PlayerPrefs.GetInt("LastScene"));
    }
 
      public void ExitMenu()
