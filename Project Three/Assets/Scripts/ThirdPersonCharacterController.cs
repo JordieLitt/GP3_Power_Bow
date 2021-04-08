@@ -176,7 +176,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         }
         if(col.gameObject.tag == "SaveWall")
         {
-            playerPosData.PlayerPosSave();
+            
         }
 
         if(col.gameObject.name =="portal1")
@@ -201,14 +201,17 @@ public class ThirdPersonCharacterController : MonoBehaviour
             if (lives == 3)
             {
                 Destroy(HealthFour.gameObject);
+                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 2)
             {
                 Destroy(HealthThree.gameObject);
+                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 1)
             {
                 Destroy(HealthTwo.gameObject);
+                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 0)
             {
