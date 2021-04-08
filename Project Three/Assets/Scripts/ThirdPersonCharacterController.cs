@@ -174,6 +174,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
             SceneManager.LoadScene("LossMenu");
             
         }
+        if(col.gameObject.tag == "SaveWall")
+        {
+            playerPosData.PlayerPosSave();
+        }
 
         if(col.gameObject.name =="portal1")
         {
@@ -193,6 +197,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject. CompareTag("DamageZone"))
         {
             lives -=1;
+            playerPosData.PlayerPosLoad();
             if (lives == 3)
             {
                 Destroy(HealthFour.gameObject);
