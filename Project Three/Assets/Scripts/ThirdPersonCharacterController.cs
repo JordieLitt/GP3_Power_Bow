@@ -201,6 +201,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
             if (lives == 0)
             {
                 Destroy(HealthOne.gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
