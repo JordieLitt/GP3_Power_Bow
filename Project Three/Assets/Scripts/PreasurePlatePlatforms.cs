@@ -16,15 +16,20 @@ public class PreasurePlatePlatforms : MonoBehaviour
         platforms.SetActive(false);
     }
     
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider collider)
     {
-        
-
-        if(!steppedOnOne)
+        if(collider.tag == "Player")
         {
-            steppedOnOne = true;
+            if(steppedOnOne == false)
+            {
+                steppedOnOne = true;
+            }
+            else
+            {
+                steppedOnTwo = true;
+            }
         }
-
+        
         if( steppedOnOne == true && steppedOnTwo == true)
         {
             if(!isDown)
@@ -32,14 +37,6 @@ public class PreasurePlatePlatforms : MonoBehaviour
                 platforms.SetActive(true);
                 isDown = true;
             }
-        }
-    }
-
-    void OnTriggerEnter(SphereCollider col1)
-    {
-        if(!steppedOnTwo)
-        {
-            steppedOnTwo = true;
         }
     }
 }

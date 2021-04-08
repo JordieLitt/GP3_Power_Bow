@@ -25,6 +25,7 @@ TagManager:
   - pickup
   - materialCh
   - bow
+  - DamageZone
   layers:
   - Default
   - TransparentFX
