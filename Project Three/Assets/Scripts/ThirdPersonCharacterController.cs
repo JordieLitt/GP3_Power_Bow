@@ -28,10 +28,20 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     public GameObject b;
     public Shoot shootSc;
+    //Health
+    public int lives;
+    public Image HealthOne;
+    public Image HealthTwo;
+    public Image HealthThree;
+    public Image HealthFour;
+
+    public Vector3 jumpForce;
 
     // Start is called before the first frame update
     void Start()
     {
+        lives = 4;
+
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
@@ -101,7 +111,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && isOnGround == true)
         {
-            rigidbody3D.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+            rigidbody3D.AddForce(jumpForce, ForceMode.Impulse);
             isOnGround = false;
             anim.SetTrigger("jump");
         }
@@ -171,6 +181,28 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject.name =="arrowPickup")
         {
             Destroy(col.gameObject);
+        }
+
+        if(col.gameObject. CompareTag("DamageZone"))
+        {
+            lives -=1;
+            if (lives == 3)
+            {
+                Destroy(HealthFour.gameObject);
+            }
+            if (lives == 2)
+            {
+                Destroy(HealthThree.gameObject);
+            }
+            if (lives == 1)
+            {
+                Destroy(HealthTwo.gameObject);
+            }
+            if (lives == 0)
+            {
+                Destroy(HealthOne.gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 

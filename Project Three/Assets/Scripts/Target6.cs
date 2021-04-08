@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target5 : MonoBehaviour
+public class Target6 : MonoBehaviour
 {
-   public bool isOpened = false;
+    public bool isOpened = false;
 
     public GameObject gate;
 
@@ -15,7 +15,7 @@ public class Target5 : MonoBehaviour
         if(isOpened == false)
         {
             isOpened = true;
-            gate.transform.position += new Vector3 (0f, 1.58f, 0f);
+            gate.transform.position += new Vector3 (0f, 2.0f, 0f);
             Destroy(symbol.gameObject);
         }
     }
