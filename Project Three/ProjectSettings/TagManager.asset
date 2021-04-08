@@ -26,6 +26,7 @@ TagManager:
   - materialCh
   - bow
   - DamageZone
+  - SaveWall
   layers:
   - Default
   - TransparentFX

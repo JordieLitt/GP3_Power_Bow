@@ -12,7 +12,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     Rigidbody rigidbody3D;
     public float speed = 12f;
-
+    
     public GameObject pressurePlate1;
     public GameObject pressurePlate2;
     public bool onTop1 = false;
@@ -36,8 +36,13 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public Image HealthFour;
 
     public Vector3 jumpForce;
+    SavePlayerPos playerPosData;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType <SavePlayerPos>();
+        playerPosData.PlayerPosLoad();
+    }
     void Start()
     {
         lives = 4;
@@ -50,6 +55,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
         b = GameObject.FindGameObjectWithTag("bow");
 
         shootSc = b.GetComponent<Shoot>();
+
+        
     }
 
     // Update is called once per frame
@@ -221,4 +228,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         audioSource.PlayOneShot(clip);
     }
+
+   
 }
