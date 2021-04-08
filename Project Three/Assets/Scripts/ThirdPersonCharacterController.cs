@@ -26,6 +26,9 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public GameObject message;
     public bool inRange = false;
 
+    public GameObject b;
+    public Shoot shootSc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
         message.SetActive(false);
+
+        b = GameObject.FindGameObjectWithTag("bow");
+
+        shootSc = b.GetComponent<Shoot>();
     }
 
     // Update is called once per frame
@@ -159,6 +166,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject.tag =="portal2")
         {
             SceneManager.LoadScene("IceBlockout");
+        }
+
+        if(col.gameObject.name =="arrowPickup")
+        {
+            Destroy(col.gameObject);
         }
     }
 

@@ -19,6 +19,8 @@ public class Shoot : MonoBehaviour
     public bool isHoldingDown1 = false;
     public bool isHoldingDown2 = false;
 
+    [SerializeField] private bool shootUnlock = false;
+
     //Audio
     AudioSource bowAudioSource;
     public AudioClip drawBow;
@@ -67,7 +69,7 @@ public class Shoot : MonoBehaviour
             lineVisual.material = mat3;
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && shootUnlock == true)
         {
             isHoldingDown2 = true;
             lineVisual.material = mat2;
@@ -82,7 +84,7 @@ public class Shoot : MonoBehaviour
             Visualize(rb.velocity);
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && shootUnlock == true)
         {
             GameObject go = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.Euler(90, 0, 0));
             Rigidbody rb = go.GetComponent<Rigidbody>();
@@ -122,5 +124,11 @@ public class Shoot : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         bowAudioSource.PlayOneShot(clip);
+    }
+
+    public void ItemPickedUp(bool status)
+    {
+        shootUnlock = status;
+        Debug.Log(shootUnlock);
     }
 }

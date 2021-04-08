@@ -24,6 +24,7 @@ TagManager:
   - portal2
   - pickup
   - materialCh
+  - bow
   layers:
   - Default
   - TransparentFX
