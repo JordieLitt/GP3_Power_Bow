@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public Transform targetLocation;
     public GameObject thePlayer;
+  
+  
 
-    void OntriggerEnter(Collider Other)
+    void OntriggerEnter(Collider col)
     {
-        thePlayer.transform.position = targetLocation.transform.position;
+        if(col.gameObject.tag =="Player")
+        {
+            MoveGameObject();
+        }
+
     }
+
+    public void MoveGameObject()
+    {
+            thePlayer.transform.position = new Vector3(521.8f, 5.8f, 299.905f);
+     }
 }

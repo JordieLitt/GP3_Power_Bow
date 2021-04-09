@@ -36,13 +36,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public Image HealthFour;
 
     public Vector3 jumpForce;
-    SavePlayerPos playerPosData;
+    public GameObject targetLocation;
+    public GameObject player;
+  
 
-    private void Awake()
-    {
-        playerPosData = FindObjectOfType <SavePlayerPos>();
-        playerPosData.PlayerPosLoad();
-    }
+  
     void Start()
     {
         lives = 4;
@@ -197,18 +195,22 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject. CompareTag("DamageZone"))
         {
             lives -=1;
+            
          
             if (lives == 3)
             {
                 Destroy(HealthFour.gameObject);
+                player.transform.position = targetLocation.transform.position;
             }
             if (lives == 2)
             {
                 Destroy(HealthThree.gameObject);
+                player.transform.position = targetLocation.transform.position;
             }
             if (lives == 1)
             {
                 Destroy(HealthTwo.gameObject);
+                player.transform.position = targetLocation.transform.position;
             }
             if (lives == 0)
             {
