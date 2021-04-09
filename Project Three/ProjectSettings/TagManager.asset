@@ -27,6 +27,9 @@ TagManager:
   - bow
   - DamageZone
   - SaveWall
+  - Ice
+  - Fire
+  - Forest
   layers:
   - Default
   - TransparentFX

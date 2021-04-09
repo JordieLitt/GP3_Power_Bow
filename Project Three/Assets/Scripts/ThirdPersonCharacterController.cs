@@ -38,8 +38,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public Vector3 jumpForce;
     public GameObject targetLocation;
     public GameObject player;
-  
 
+    
   
     void Start()
     {
@@ -98,7 +98,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 if(hit.collider.tag == "Crystal")
                 {
                     print("Found crystal");
-                    SceneManager.LoadScene("WinMenu");
+                    CrystalChecker.instance.crystals += 1;
+                    SceneManager.LoadScene("HubInterior");
                 }
 
                 else
@@ -171,20 +172,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
             Cursor.visible = true;
             SceneManager.LoadScene("LossMenu");
             
-        }
-        if(col.gameObject.tag == "SaveWall")
-        {
-            
-        }
-
-        if(col.gameObject.name =="portal1")
-        {
-            SceneManager.LoadScene("Forest Level");
-        }
-
-        if(col.gameObject.tag =="portal2")
-        {
-            SceneManager.LoadScene("IceBlockout");
         }
 
         if(col.gameObject.name =="arrowPickup")

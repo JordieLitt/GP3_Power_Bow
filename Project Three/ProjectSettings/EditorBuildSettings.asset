@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: 8a4f4b84023c1cd48bd3702fe0413d14
   - enabled: 1
+    path: Assets/Scenes/HubInterior.unity
+    guid: 625708d4d985d0f42819777a93885859
+  - enabled: 1
     path: Assets/Scenes/ForestLevel.unity
     guid: 03d6e1ed82e76464b91cbbc474eb9b86
   - enabled: 1
     path: Assets/Scenes/IceBlockout.unity
     guid: 916b4da8e6952cb45b6fb0fc1d5f05db
+  - enabled: 1
+    path: Assets/Scenes/FireBlockout.unity
+    guid: bdd51fafb627c534da5fb03fc461bfba
   - enabled: 1
     path: Assets/Scenes/Menus/LossMenu.unity
     guid: f8109e82f54f49449aa66a3e5fec9b13
