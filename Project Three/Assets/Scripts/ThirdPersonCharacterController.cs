@@ -99,7 +99,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 {
                     print("Found crystal");
                     CrystalChecker.instance.crystals += 1;
-                    SceneManager.LoadScene("HubInterior");
+                    //SceneManager.LoadScene("HubInterior");
                 }
 
                 else
