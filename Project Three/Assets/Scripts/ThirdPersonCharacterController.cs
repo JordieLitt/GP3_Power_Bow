@@ -197,21 +197,18 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject. CompareTag("DamageZone"))
         {
             lives -=1;
-            playerPosData.PlayerPosLoad();
+         
             if (lives == 3)
             {
                 Destroy(HealthFour.gameObject);
-                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 2)
             {
                 Destroy(HealthThree.gameObject);
-                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 1)
             {
                 Destroy(HealthTwo.gameObject);
-                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             if (lives == 0)
             {
