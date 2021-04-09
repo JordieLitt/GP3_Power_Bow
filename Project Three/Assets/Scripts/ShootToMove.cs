@@ -9,12 +9,14 @@ public class ShootToMove : MonoBehaviour
 
     public Transform startMarker;
     public Transform endMarker;
+    public Transform endMarker2;
 
     public float speed = 1.0F;
 
     private float startTime;
 
     private float journeyLength;
+    private float journeyLength2;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class ShootToMove : MonoBehaviour
         startTime = Time.time;
 
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+
+        journeyLength2 = Vector3.Distance(startMarker.position, endMarker2.position);
     }
 
     // Update is called once per frame
@@ -29,19 +33,17 @@ public class ShootToMove : MonoBehaviour
     {
         if(isShot == true)
         {
-            
             float distCovered = (Time.time - startTime) * speed;
 
         
-            float fracJourney = distCovered / journeyLength;
+            float fracJourney = distCovered / journeyLength2;
 
-            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Mathf.PingPong (fracJourney, 1));
+            transform.position = Vector3.Lerp(startMarker.position, endMarker2.position, Mathf.PingPong (fracJourney, 1));
         }
 
         if(isShot == false)
         {
-            startMarker.transform.position = platform.transform.position;
-            platform.transform.position = startMarker.transform.position;
+            endMarker.position = transform.position;
         }
     }
 
@@ -58,7 +60,6 @@ public class ShootToMove : MonoBehaviour
             {
                 isShot = false;
             }
-            
         }
     }
 

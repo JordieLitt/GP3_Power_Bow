@@ -79,5 +79,10 @@ public class MainMenu : MonoBehaviour
       Cursor.visible = false;
    }
 
+   public void ReturnHome()
+   {
+     SceneManager.LoadScene("HubInterior");
+   }
+
 
 }
