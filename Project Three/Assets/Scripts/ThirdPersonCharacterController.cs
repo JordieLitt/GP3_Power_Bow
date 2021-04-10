@@ -70,17 +70,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
         if(Physics.Raycast(transform.position,(forward2), out hit2))
         {
-            if(hit2.collider.tag == "Crystal")
-            {
-                inRange = true;
-            }
-
-            else
-            {
-                inRange = false;
-            }
-
-            if(hit2.collider.tag == "Lever")
+           if(hit2.collider.tag == "Lever")
             {
                 inRange2 = true;
             }
@@ -89,27 +79,39 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 inRange2 = false;
             }
+           
+            // if(hit2.collider.tag == "Crystal")
+            // {
+            //     inRange = true;
+            // }
+
+            // else
+            // {
+            //     inRange = false;
+            // }
+
+            
         }   
 
-        if(inRange == false)
-        {
-            message.SetActive(false);
-        }
+        // if(inRange == false)
+        // {
+        //     message.SetActive(false);
+        // }
 
-        if(inRange == true)
-        {
-            message.SetActive(true);
-        }
+        // if(inRange == true)
+        // {
+        //     message.SetActive(true);
+        // }
 
-        if(inRange2 == false)
-        {
-            message2.SetActive(false);
-        }
+        // if(inRange2 == false)
+        // {
+        //     message2.SetActive(false);
+        // }
 
-        if(inRange2 == true)
-        {
-            message2.SetActive(true);
-        }
+        // if(inRange2 == true)
+        // {
+        //     message2.SetActive(true);
+        // }
 
         if(Input.GetKeyDown(KeyCode.E))
         {

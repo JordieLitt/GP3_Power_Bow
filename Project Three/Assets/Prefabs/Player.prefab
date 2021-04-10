@@ -1262,6 +1262,7 @@ MonoBehaviour:
   matNormal: {fileID: 2100000, guid: da9be6beff2fb0f4a8e672c87912bd77, type: 2}
   matAstral: {fileID: 2100000, guid: 1bbb33912ca244c438f3630f473e6e8a, type: 2}
   abilityActive: 0
+  astralUnlock: 0
 --- !u!1 &4314603413372859237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2048,7 @@ MonoBehaviour:
   mat3: {fileID: 2100000, guid: 5fc601db108499145afcccda1be45c5d, type: 2}
   isHoldingDown1: 0
   isHoldingDown2: 0
+  shootUnlock: 0
   drawBow: {fileID: 8300000, guid: 225692f5189758b4185b4a082494affb, type: 3}
   normalShot: {fileID: 8300000, guid: 36f9e3016c47a4d4b977db044146ee5d, type: 3}
 --- !u!1 &5125753031027895190
@@ -2475,8 +2477,21 @@ MonoBehaviour:
   distanceAhead: 15
   distanceAhead2: 15
   message: {fileID: 0}
+  message2: {fileID: 0}
   inRange: 0
-  pickup: 0
+  inRange2: 0
+  platforms: {fileID: 0}
+  gate: {fileID: 0}
+  b: {fileID: 0}
+  shootSc: {fileID: 0}
+  lives: 0
+  HealthOne: {fileID: 0}
+  HealthTwo: {fileID: 0}
+  HealthThree: {fileID: 0}
+  HealthFour: {fileID: 0}
+  jumpForce: {x: 0, y: 10, z: 0}
+  targetLocation: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &6826098770524438435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2489,9 +2504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c539af7d541fb9e4f8306bc0a6eea618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockedAstral: 0
   player2Prefab: {fileID: 3147692265561224372, guid: 51d5c3b0617699d43a8e9ccb60cc2ce9,
     type: 3}
   player: {fileID: 5381729804295560017}
+  matChange: {fileID: 0}
 --- !u!1 &5623568208429593674
 GameObject:
   m_ObjectHideFlags: 0

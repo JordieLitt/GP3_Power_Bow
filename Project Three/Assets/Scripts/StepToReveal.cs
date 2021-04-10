@@ -44,7 +44,7 @@ public class StepToReveal : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Player" || collider.gameObject.name == "player2")
+        if(collider.tag == "Player" || collider.name == "player2")
         {
             onTopOf = true;
         }
@@ -52,7 +52,7 @@ public class StepToReveal : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-        if(collider.tag == "Player" || collider.gameObject.name == "player2")
+        if(collider.tag == "Player" || collider.name == "player2")
         {
             onTopOf = false;
         }

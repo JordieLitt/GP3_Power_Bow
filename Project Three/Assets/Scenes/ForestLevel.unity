@@ -9251,6 +9251,11 @@ PrefabInstance:
       propertyPath: OrigiX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: jumpForce.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5075230705809704351, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_TagString
