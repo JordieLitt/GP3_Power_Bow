@@ -24,7 +24,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public float distanceAhead;
     public float distanceAhead2;
     public GameObject message;
+    public GameObject message2;
     public bool inRange = false;
+    public bool inRange2 = false; 
+    public GameObject platforms;
+    public GameObject gate;
 
     public GameObject b;
     public Shoot shootSc;
@@ -75,6 +79,16 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 inRange = false;
             }
+
+            if(hit2.collider.tag == "Lever")
+            {
+                inRange2 = true;
+            }
+
+            else
+            {
+                inRange2 = false;
+            }
         }   
 
         if(inRange == false)
@@ -85,6 +99,16 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(inRange == true)
         {
             message.SetActive(true);
+        }
+
+        if(inRange2 == false)
+        {
+            message2.SetActive(false);
+        }
+
+        if(inRange2 == true)
+        {
+            message2.SetActive(true);
         }
 
         if(Input.GetKeyDown(KeyCode.E))
@@ -105,6 +129,12 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 else
                 {
                     print("Have not found crystal");
+                }
+
+                if(hit.collider.tag == "Lever")
+                {
+                    platforms.SetActive(false);
+                    gate.transform.position  += new Vector3 (0f, 7.45f, 0f);
                 }
             }
         }

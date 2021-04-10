@@ -30,6 +30,7 @@ TagManager:
   - Ice
   - Fire
   - Forest
+  - Lever
   layers:
   - Default
   - TransparentFX
