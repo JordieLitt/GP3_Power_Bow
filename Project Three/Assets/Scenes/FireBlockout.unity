@@ -6546,9 +6546,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Little man, it is I Tarkus, the Spirit of fire.
 
-        Reclaim your families ability to warp with
+        Reclaim your
+        families ability to warp with
 
-        that bow of yours, and calm Mount Izalith
+        that bow of yours, and calm Mount
+        Izalith
 
         by cleansing my crystal'
       objectReference: {fileID: 0}
