@@ -19,7 +19,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public bool onTop2 = false;
 
     AudioSource audioSource;
-    public AudioClip run;
+    
 
     public float distanceAhead;
     public float distanceAhead2;
@@ -171,7 +171,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
             if(isOnGround)
             {
             anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
-            PlaySound(run);
+            
             }
         } 
         else if(playerMovement == Vector3.zero)

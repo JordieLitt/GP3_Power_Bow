@@ -8472,6 +8472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   gate: {fileID: 1863368680}
+  unlocked: {fileID: 0}
 --- !u!64 &717400801
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8946,6 +8947,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5075230703994801175, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: mat1
+      value: 
+      objectReference: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
+    - target: {fileID: 5075230703994801175, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: mat2
+      value: 
+      objectReference: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
     - target: {fileID: 5075230705341805913, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_audioClip
@@ -21212,6 +21223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   gate: {fileID: 1863368680}
+  unlocked: {fileID: 0}
 --- !u!65 &1678962723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22419,6 +22431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   gate: {fileID: 1863368680}
+  unlocked: {fileID: 0}
 --- !u!64 &1863368685
 MeshCollider:
   m_ObjectHideFlags: 0
