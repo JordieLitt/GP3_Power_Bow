@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StepToReveal : MonoBehaviour
 {
-    public GameObject platform1, platform2, platform3, platform4, platform5;
+    public GameObject platform1, platform2, platform3, platform4, platform5, platform6;
 
     public Material matNormal, matChanged;
 
@@ -18,6 +18,7 @@ public class StepToReveal : MonoBehaviour
         platform3.GetComponent<Renderer>().material = matNormal;
         platform4.GetComponent<Renderer>().material = matNormal;
         platform5.GetComponent<Renderer>().material = matNormal;
+        platform6.GetComponent<Renderer>().material = matNormal;
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class StepToReveal : MonoBehaviour
             platform3.GetComponent<Renderer>().material = matChanged;
             platform4.GetComponent<Renderer>().material = matChanged;
             platform5.GetComponent<Renderer>().material = matChanged;
+            platform6.GetComponent<Renderer>().material = matChanged;
         }
 
         if(onTopOf == false)
@@ -39,6 +41,7 @@ public class StepToReveal : MonoBehaviour
             platform3.GetComponent<Renderer>().material = matNormal;
             platform4.GetComponent<Renderer>().material = matNormal;
             platform5.GetComponent<Renderer>().material = matNormal;
+            platform6.GetComponent<Renderer>().material = matNormal;
         }
     }
 

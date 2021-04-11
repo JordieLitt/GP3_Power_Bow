@@ -2530,7 +2530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1558664100}
   endMarker: {fileID: 1898175426}
-  speed: 30
+  speed: 15
 --- !u!1001 &1748222856
 PrefabInstance:
   m_ObjectHideFlags: 0

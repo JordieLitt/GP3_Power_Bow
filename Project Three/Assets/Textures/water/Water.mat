@@ -32,19 +32,32 @@ Material:
         m_Texture: {fileID: 2800000, guid: b51ea61dfde8dad4e98300df47e5d0ae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SecondNormal:
         m_Texture: {fileID: 2800000, guid: 0229ea4fea770b740ad90c993c2db4de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1__NormalStr: 0.49
+    - _ColorMask: 15
     - _Depth: 1
     - _Displacement: 0.12
     - _DitherSize: 1
     - _Opacity: 1
     - _Smoothness: 0.901
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _Strength: 1.76
+    - _UseUIAlphaClip: 0
     m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Deep: {r: 0.08397116, g: 0.3312931, b: 0.3490566, a: 0}
     - _Shallow: {r: 0.1650943, g: 0.9079729, b: 1, a: 0}
+    - _Specular: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

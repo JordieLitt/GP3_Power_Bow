@@ -2468,7 +2468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnGround: 1
-  speed: 12
+  speed: 13
   pressurePlate1: {fileID: 0}
   pressurePlate2: {fileID: 0}
   onTop1: 0
