@@ -2187,6 +2187,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805913, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805913, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.087
+      objectReference: {fileID: 0}
     - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: jumpForce.y
@@ -2227,6 +2237,11 @@ PrefabInstance:
       propertyPath: HealthOne
       value: 
       objectReference: {fileID: 1566709720}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: run
+      value: 
+      objectReference: {fileID: 8300000, guid: f013737a526d6344aab9781677fc46e1, type: 3}
     - target: {fileID: 5381729804295560017, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_Name

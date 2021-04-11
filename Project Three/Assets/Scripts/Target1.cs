@@ -7,6 +7,13 @@ public class Target1 : MonoBehaviour
     public bool isOpened = false;
 
     public GameObject gate;
+     AudioSource targetSource;
+    public AudioClip unlocked;
+
+        void Start()
+    {
+        targetSource= GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider col)
     {
@@ -14,6 +21,12 @@ public class Target1 : MonoBehaviour
         {
             isOpened = true;
             gate.transform.position += new Vector3 (0f, 7.45f, 0f);
+            PlaySound(unlocked);
         }
+    }
+
+     public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

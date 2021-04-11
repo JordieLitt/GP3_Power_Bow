@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -42,6 +42,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public Vector3 jumpForce;
     public GameObject targetLocation;
     public GameObject player;
+    public float gravity;
 
     
   
@@ -161,13 +162,17 @@ public class ThirdPersonCharacterController : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         Vector3 playerMovement = new Vector3(hor, 0f, ver) * speed * Time.deltaTime;
+        
         transform.Translate(playerMovement, Space.Self);
 
         if(playerMovement != Vector3.zero && !Input.GetKey(KeyCode.Space))
         {
             //run
+            if(isOnGround)
+            {
             anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
             PlaySound(run);
+            }
         } 
         else if(playerMovement == Vector3.zero)
         {
