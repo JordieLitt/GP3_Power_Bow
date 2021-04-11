@@ -20,12 +20,12 @@ public class floatpressure : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
-            platforms2.transform.position = new Vector3(339, 175, 340);
+            platforms2.transform.position = new Vector3(317, 174, 141);
         }
 
         if(collider.tag == "Astra2")
         {
-            platforms2.transform.position = new Vector3(339, 175, 340);
+            platforms2.transform.position = new Vector3(317, 174, 141);
         }
     }
 
@@ -33,12 +33,12 @@ public class floatpressure : MonoBehaviour
     {
         if(collider.tag == "Player" && projection == false)
         {
-            platforms2.transform.position = new Vector3(339, 432, 340);
+            platforms2.transform.position = new Vector3(317, 410, 141);
         }
 
         if(collider.tag == "Astra2")
         {
-            platforms2.transform.position = new Vector3(339, 431, 340);
+            platforms2.transform.position = new Vector3(317, 410, 141);
         }
     }
 

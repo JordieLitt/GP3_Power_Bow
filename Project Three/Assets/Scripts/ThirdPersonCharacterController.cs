@@ -144,11 +144,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
         AttackAni();
     
-    }
-
-    void FixedUpdate()
-    {
-        if(Input.GetButtonDown("Jump") && isOnGround == true)
+     if(Input.GetButtonDown("Jump") && isOnGround == true)
         {
             rigidbody3D.AddForce(jumpForce, ForceMode.Impulse);
             isOnGround = false;
@@ -179,6 +175,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
             //Idle
             anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
         }
+    }
+
+    void FixedUpdate()
+    {
+       
     }
     
 
@@ -244,6 +245,37 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 Cursor.visible = true;
                 SceneManager.LoadScene("LossMenu");
             }
+            
+        }
+        if(col.gameObject. CompareTag("enemy"))
+        {
+            lives -=1;
+            
+         
+            if (lives == 3)
+            {
+                Destroy(HealthFour.gameObject);
+                
+            }
+            if (lives == 2)
+            {
+                Destroy(HealthThree.gameObject);
+                
+            }
+            if (lives == 1)
+            {
+                Destroy(HealthTwo.gameObject);
+                
+            }
+            if (lives == 0)
+            {
+                Destroy(HealthOne.gameObject);
+                PlayerPrefs.SetInt("LastScene", SceneManager.GetActiveScene().buildIndex);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadScene("LossMenu");
+            }
+            
         }
     }
 

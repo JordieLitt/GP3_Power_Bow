@@ -11,6 +11,11 @@ public class PressurePlate1 : MonoBehaviour
     public GameObject pPlate1;
     public GameObject platforms;
 
+    void Start()
+    {
+        platforms.SetActive(false);
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
@@ -21,7 +26,7 @@ public class PressurePlate1 : MonoBehaviour
 
         if(projection == true && astraOn == true && astra2On)
         {
-            platforms.transform.position = new Vector3(272, 176, 271);
+            platforms.SetActive(true);
         }
     }
 

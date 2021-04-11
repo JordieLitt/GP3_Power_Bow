@@ -564,8 +564,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 354983245, guid: 7725fcff20226c34fb9b609f188a0248, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7725fcff20226c34fb9b609f188a0248, type: 3}
+--- !u!1 &354983242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3545506508693747000, guid: 7725fcff20226c34fb9b609f188a0248,
+    type: 3}
+  m_PrefabInstance: {fileID: 354983241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &354983243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354983242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bbd383be16b234388124f90a6824c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 1226355545}
+  conversation: {fileID: 0}
+  atNPC: 0
+  talking: 0
 --- !u!1001 &410675421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,6 +1260,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe1bdcf411272d4d92e12f0ea5862c4, type: 3}
+--- !u!1 &687269788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6599225627588990076, guid: 8b44f072866ce0d4e8b5e1fafbe574bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8873898527358276501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &703389776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7009529370466562998, guid: 243a6acec4737ab4f90ea83c367d2201,
@@ -2573,7 +2602,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d928f9b5df9185541941c60cc5ed46e0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2816,7 +2845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShot: 0
-  item: {fileID: 0}
+  item: {fileID: 687269788}
 --- !u!64 &1809823493
 MeshCollider:
   m_ObjectHideFlags: 0

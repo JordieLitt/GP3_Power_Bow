@@ -4,29 +4,17 @@ using UnityEngine;
 
 public class DisplayTxt : MonoBehaviour
 {
-     public GameObject message;
-     private bool atNPC= false;
+    public GameObject message;
+    public GameObject conversation;
+    public bool atNPC= false;
+    public bool talking= false;
 
     void Start()
     {}
 
     void Update()
     {
-        if(atNPC)
-        {
-            //display message
-            message.SetActive(true);
-            //can transition scene
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-            message.SetActive(false);
-            }
-        }
-        else
-        {
-            //close message
-            message.SetActive(false);
-        }
+        ConversationOne();
     }
     void OnTriggerEnter(Collider col)
     {
@@ -40,6 +28,37 @@ public class DisplayTxt : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
           atNPC = false;
+          conversation.SetActive(false);
+        }
+    }
+
+    void ConversationOne()
+    {
+        if(atNPC)
+        {
+            //display message
+            message.SetActive(true);
+            
+            if(!talking)
+            {
+                if(Input.GetKeyDown(KeyCode.E) && !conversation.activeInHierarchy)
+                {
+
+                //enter conversation
+                conversation.SetActive(true);
+                
+                }
+                else if(Input.GetKeyDown(KeyCode.E) && conversation.activeInHierarchy)
+                {
+                     conversation.SetActive(false);
+                }
+            }
+
+        }
+        else
+        {
+            //close message
+            message.SetActive(false);
         }
     }
 }
