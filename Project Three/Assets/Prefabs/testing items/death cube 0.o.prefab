@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 994000255032058999}
   - component: {fileID: 994000255032058996}
   - component: {fileID: 994000255032059000}
+  - component: {fileID: 959663359986327418}
   m_Layer: 0
   m_Name: death cube 0.o
-  m_TagString: DamageZone
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,3 +116,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &959663359986327418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994000255032058997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a7b29058912f14dbffe539b8d3ea71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMarker: {fileID: 0}
+  endMarker: {fileID: 0}
+  speed: 4

@@ -2,34 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFight : MonoBehaviour
+public class Bossfight : MonoBehaviour
 {
-    public Transform startMarker;
-    public Transform endMarker;
-    public bool hit = false;
+    public Transform target;
+    public float speed;
+    public GameObject platforms;
+    public GameObject finalPlat;
+    public bool hit;
+    public AudioSource ambience;
+    public AudioSource bossPlayer;
 
-    public GameObject bossPlats;
-    // Start is called before the first frame update
 
     void Start()
     {
-        bossPlats.SetActive(false);
+        platforms.SetActive(false);
+        finalPlat.SetActive(false);
+        ambience.Play();
     }
 
     void Update()
     {
         if(hit == true)
         {
-            transform.position = Vector3.MoveTowards(startMarker.position, endMarker.position, 10f);
+            platforms.SetActive(true);
+            Vector3 a = transform.position;
+            Vector3 b = target.position;
+            transform.position = Vector3.MoveTowards(a, b, speed);
         }
+
     }
 
-    private void OnTriggerEnter (Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag == "Player")
         {
-            bossPlats.SetActive(true);
             hit = true;
+
+            if(ambience.isPlaying)
+            {
+                ambience.Stop();
+                bossPlayer.Play();
+            }
         }
     }
+
+    public void OnDestroy()
+    {
+        finalPlat.SetActive(true);
+    }
+
 }
