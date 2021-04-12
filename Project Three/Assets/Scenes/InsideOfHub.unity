@@ -516,6 +516,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4304174590709185262, guid: 86c22683e1e0be64e9d8c1913833ee52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4304174590709185267, guid: 86c22683e1e0be64e9d8c1913833ee52,
         type: 3}
       propertyPath: m_IsActive
@@ -636,6 +641,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6312379431899204503, guid: 86c22683e1e0be64e9d8c1913833ee52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547533777078340710, guid: 86c22683e1e0be64e9d8c1913833ee52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522743311956637179, guid: 86c22683e1e0be64e9d8c1913833ee52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620173078164462316, guid: 86c22683e1e0be64e9d8c1913833ee52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8867633815234190504, guid: 86c22683e1e0be64e9d8c1913833ee52,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -643,6 +668,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c22683e1e0be64e9d8c1913833ee52, type: 3}
+--- !u!1 &760606883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6142833578623744621, guid: 86c22683e1e0be64e9d8c1913833ee52,
+    type: 3}
+  m_PrefabInstance: {fileID: 760606882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1001272784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -917,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbd383be16b234388124f90a6824c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 693679502}
+  message: {fileID: 760606883}
   conversation: {fileID: 2109581411}
   atNPC: 0
   talking: 0
