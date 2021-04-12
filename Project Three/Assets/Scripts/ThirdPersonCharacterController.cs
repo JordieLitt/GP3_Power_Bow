@@ -6,45 +6,38 @@ using UnityEngine.UI;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
+    //variables
     public bool isOnGround = true;
-
-    private Animator anim;
-
-    Rigidbody rigidbody3D;
-    public float speed = 12f;
-    
-    public GameObject pressurePlate1;
-    public GameObject pressurePlate2;
+    public bool inRange = false;
+    public bool inRange2 = false;
     public bool onTop1 = false;
     public bool onTop2 = false;
-
-    AudioSource audioSource;
-    
-
+    private bool jump;
+    public float jumpForce;
+    public float speed = 12f;
+    public float groundCheckDistance;
+    public LayerMask groundMask;
     public float distanceAhead;
     public float distanceAhead2;
-    public GameObject message;
-    public GameObject message2;
-    public bool inRange = false;
-    public bool inRange2 = false; 
+    public int lives;
+    private Vector3 hor;
+    private Vector3 ver;
+    
+    //References
     public GameObject platforms;
     public GameObject gate;
-
     public GameObject b;
-    public Shoot shootSc;
-    //Health
-    public int lives;
+    public GameObject targetLocation;
+    public GameObject player;
     public Image HealthOne;
     public Image HealthTwo;
     public Image HealthThree;
     public Image HealthFour;
-
-    public Vector3 jumpForce;
-    public GameObject targetLocation;
-    public GameObject player;
-    public float gravity;
-
-    
+    Rigidbody rigidbody3D;
+    AudioSource audioSource;
+    private Animator anim;
+    private Camera playerCamera;
+    public Shoot shootSc;
   
     void Start()
     {
@@ -53,16 +46,13 @@ public class ThirdPersonCharacterController : MonoBehaviour
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
-        message.SetActive(false);
+        playerCamera = Camera.main;
 
         b = GameObject.FindGameObjectWithTag("bow");
 
         shootSc = b.GetComponent<Shoot>();
-
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit2;
@@ -80,39 +70,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 inRange2 = false;
             }
-           
-            // if(hit2.collider.tag == "Crystal")
-            // {
-            //     inRange = true;
-            // }
-
-            // else
-            // {
-            //     inRange = false;
-            // }
-
-            
+          
         }   
-
-        // if(inRange == false)
-        // {
-        //     message.SetActive(false);
-        // }
-
-        // if(inRange == true)
-        // {
-        //     message.SetActive(true);
-        // }
-
-        // if(inRange2 == false)
-        // {
-        //     message2.SetActive(false);
-        // }
-
-        // if(inRange2 == true)
-        // {
-        //     message2.SetActive(true);
-        // }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -126,7 +85,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 {
                     print("Found crystal");
                     CrystalChecker.instance.crystals += 1;
-                    //SceneManager.LoadScene("HubInterior");
                 }
 
                 else
@@ -143,23 +101,24 @@ public class ThirdPersonCharacterController : MonoBehaviour
         }
 
         AttackAni();
-    
-     if(Input.GetButtonDown("Jump") && isOnGround == true)
+
+        isOnGround = Physics.CheckSphere(transform.position, groundCheckDistance,groundMask);
+        if(Input.GetButtonDown("Jump"))
         {
-            rigidbody3D.AddForce(jumpForce, ForceMode.Impulse);
-            isOnGround = false;
+            jump = true;
             anim.SetTrigger("jump");
         }
-        if(isOnGround == true)
+        else if(Input.GetButtonUp("Jump"))
         {
+            jump = false;
             anim.SetTrigger("land");
         }
 
-        float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
-        Vector3 playerMovement = new Vector3(hor, 0f, ver) * speed * Time.deltaTime;
-        
-        transform.Translate(playerMovement, Space.Self);
+        hor = Input.GetAxis("Horizontal") * playerCamera.transform.right;
+        ver = Input.GetAxis("Vertical") * playerCamera.transform.forward;
+        Vector3 playerMovement = (hor + ver) * speed;
+        print($"This is the forward vector:{playerCamera.transform.forward}");
+        print($"This is the right vector:{playerCamera.transform.right}");
 
         if(playerMovement != Vector3.zero && !Input.GetKey(KeyCode.Space))
         {
@@ -173,24 +132,29 @@ public class ThirdPersonCharacterController : MonoBehaviour
         else if(playerMovement == Vector3.zero)
         {
             //Idle
+            if(isOnGround)
+            {
             anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+            }
         }
     }
 
     void FixedUpdate()
     {
+       if(jump && isOnGround)
+       {
+           rigidbody3D.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+       }
        
+       Vector3 playerMovement = (hor + ver) * speed;
+       playerMovement.y = 0;
+       rigidbody3D.velocity = new Vector3(playerMovement.x, rigidbody3D.velocity.y, playerMovement.z);
     }
     
 
     
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ground")
-        {
-            isOnGround = true;
-        }
-
         if(collision.gameObject.tag == "PPlate1")
         {
             onTop1 = true;
@@ -204,13 +168,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag =="killBox")
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadScene("LossMenu");
-            
-        }
 
         if(col.gameObject.name =="arrowPickup")
         {
