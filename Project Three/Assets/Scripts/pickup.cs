@@ -5,6 +5,8 @@ using UnityEngine;
 public class pickup : MonoBehaviour
 {
     public GameObject shootSc;
+    public GameObject tutorialMessage;
+    public float delay = 5f;
 
     void Start()
     {
@@ -13,6 +15,10 @@ public class pickup : MonoBehaviour
 
     public void OnDestroy()
     {
+        tutorialMessage.SetActive(true);
+
         shootSc.BroadcastMessage("ItemPickedUp", true);
+
+        Destroy(tutorialMessage, delay);
     }
 }
