@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PressToRemove : MonoBehaviour
 {
-    public GameObject platform;
+    public GameObject platform, platform2;
+    public GameObject target1;
+    public GameObject target2;
     public bool isSteppedOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         platform.SetActive(true);
+        platform2.SetActive(true);
+        target1.SetActive(true);
+        target2.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -27,6 +32,9 @@ public class PressToRemove : MonoBehaviour
         if(isSteppedOn == true)
         {
             platform.SetActive(false);
+            platform2.SetActive(false);
+            target1.SetActive(false);
+            target2.SetActive(true);
         }
     }
 }

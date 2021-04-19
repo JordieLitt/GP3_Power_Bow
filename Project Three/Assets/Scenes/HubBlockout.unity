@@ -650,6 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 354983245, guid: 7725fcff20226c34fb9b609f188a0248, type: 3}
+    - {fileID: 354983244, guid: 7725fcff20226c34fb9b609f188a0248, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7725fcff20226c34fb9b609f188a0248, type: 3}
 --- !u!1 &354983242 stripped
 GameObject:
@@ -666,13 +667,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 354983242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bbd383be16b234388124f90a6824c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 157e652b749ad5041a695d2e934ee550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 7421847987173285964}
-  conversation: {fileID: 0}
-  atNPC: 0
-  talking: 0
+  baseMat: {fileID: 2100000, guid: eac6db83e0554ed4c9d80361deb85090, type: 2}
+  cleanseMat: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
+  cleanseMessage: {fileID: 7421847987173285964}
+  atCrystal: 0
+  alreadyCleansed: 0
+  expectedCount: 1
 --- !u!1 &360100679
 GameObject:
   m_ObjectHideFlags: 0

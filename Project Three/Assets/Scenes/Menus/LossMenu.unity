@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 190478047}
   - component: {fileID: 190478046}
   m_Layer: 5
-  m_Name: ManMenuHub
+  m_Name: HubButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 245356312}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ExitMenu
+        m_MethodName: ReturnHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 378199975}
   - component: {fileID: 378199974}
   m_Layer: 5
-  m_Name: ManMenuButton (1)
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13481,7 +13481,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 21686f2cddbbbd64395050c789d0a440,
         type: 3}
       propertyPath: m_RootOrder
-      value: 61
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21686f2cddbbbd64395050c789d0a440,
         type: 3}
@@ -16341,7 +16341,7 @@ Transform:
   - {fileID: 539753436}
   - {fileID: 1350251487}
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1149135735
 PrefabInstance:
@@ -16709,6 +16709,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cyclops
       objectReference: {fileID: 0}
+    - target: {fileID: 3836259592316163998, guid: 792e7975cf231dc4ebb49740ad99443e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a03f61e89dec86c44904e13fc2530c9c, type: 2}
+    - target: {fileID: 8498774689756691275, guid: 792e7975cf231dc4ebb49740ad99443e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a03f61e89dec86c44904e13fc2530c9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 792e7975cf231dc4ebb49740ad99443e, type: 3}
 --- !u!1001 &1164973415
@@ -19141,13 +19151,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275368881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bbd383be16b234388124f90a6824c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 157e652b749ad5041a695d2e934ee550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 4304174590962957055}
-  conversation: {fileID: 0}
-  atNPC: 0
-  talking: 0
+  baseMat: {fileID: 2100000, guid: eac6db83e0554ed4c9d80361deb85090, type: 2}
+  cleanseMat: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
+  cleanseMessage: {fileID: 4304174590962957055}
+  atCrystal: 0
+  alreadyCleansed: 0
+  expectedCount: 4
 --- !u!65 &1275368885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19161,21 +19173,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.038810663, z: 0.1}
   m_Center: {x: 0.0000000023283062, y: -0.009405341, z: -0.0000000023283067}
---- !u!114 &1275368886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275368881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21326389941824349a4e08d44c49913f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseMat: {fileID: 2100000, guid: eac6db83e0554ed4c9d80361deb85090, type: 2}
-  cleanseMat: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
-  expectedCount: 4
 --- !u!1001 &1291905219
 PrefabInstance:
   m_ObjectHideFlags: 0

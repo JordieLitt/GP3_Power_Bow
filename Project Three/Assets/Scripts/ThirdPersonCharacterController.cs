@@ -81,17 +81,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
             if(Physics.Raycast(transform.position,(forward), out hit))
             {
-                if(hit.collider.tag == "Crystal")
-                {
-                    print("Found crystal");
-                    CrystalChecker.instance.crystals += 1;
-                }
-
-                else
-                {
-                    print("Have not found crystal");
-                }
-
                 if(hit.collider.tag == "Lever")
                 {
                     platforms.SetActive(false);

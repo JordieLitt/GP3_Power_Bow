@@ -38,8 +38,15 @@ public class OpenDoor : MonoBehaviour
     {
         if(collider.tag == "Player" && projection == true)
         {
-            astraOn = true;
-            astra2On = true;
+            if (astraOn != true)
+            {
+                astraOn = true;
+            }
+            
+            if (astraOn == true)
+            {
+                astra2On = true;
+            }
         }
     }
 
