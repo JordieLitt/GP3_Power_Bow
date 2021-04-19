@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
    public GameObject pauseMenu;
+   public GameObject startFresh;
 
   public static bool isPaused = false;
 
@@ -26,6 +27,15 @@ public class MainMenu : MonoBehaviour
         {
             PauseGame();
         }
+    }
+
+    if(CrystalChecker.instance.crystals == 0)
+    {
+      startFresh.SetActive(false);
+    }
+    else
+    {
+      startFresh.SetActive(true);
     }
     }
 
