@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
 
    public void StartGame()
    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
    }
 
@@ -59,10 +60,13 @@ public class MainMenu : MonoBehaviour
    public void NewGame()
    {
      CrystalChecker.instance.crystals = 0;
+     Time.timeScale = 1f;
      SceneManager.LoadScene("HubBlockout");
+     
    }
    public void LoadGame()
    {
+     Time.timeScale = 1f;
      SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
    }
 
@@ -79,6 +83,7 @@ public class MainMenu : MonoBehaviour
 
      public void ExitMenu()
    {
+     Time.timeScale = 1f;
        SceneManager.LoadScene("MainMenu");
    }
 
@@ -102,6 +107,7 @@ public class MainMenu : MonoBehaviour
 
    public void ReturnHome()
    {
+     Time.timeScale = 1f;
      SceneManager.LoadScene("InsideOfHub");
    }
 

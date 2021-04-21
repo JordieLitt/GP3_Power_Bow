@@ -8,7 +8,8 @@ public class StepToReveal : MonoBehaviour
 
     public Material matNormal, matChanged;
 
-    public bool onTopOf;
+    public bool onTopOf1;
+    public bool onTopOf2;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,17 @@ public class StepToReveal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(onTopOf == true)
+        if(onTopOf2 == false)
+        {
+            platform1.GetComponent<Renderer>().material = matNormal;
+            platform2.GetComponent<Renderer>().material = matNormal;
+            platform3.GetComponent<Renderer>().material = matNormal;
+            platform4.GetComponent<Renderer>().material = matNormal;
+            platform5.GetComponent<Renderer>().material = matNormal;
+            platform6.GetComponent<Renderer>().material = matNormal;
+        }
+
+        if(onTopOf1 == true)
         {
             platform1.GetComponent<Renderer>().material = matChanged;
             platform2.GetComponent<Renderer>().material = matChanged;
@@ -34,7 +45,7 @@ public class StepToReveal : MonoBehaviour
             platform6.GetComponent<Renderer>().material = matChanged;
         }
 
-        if(onTopOf == false)
+        if(onTopOf1 == false)
         {
             platform1.GetComponent<Renderer>().material = matNormal;
             platform2.GetComponent<Renderer>().material = matNormal;
@@ -43,21 +54,36 @@ public class StepToReveal : MonoBehaviour
             platform5.GetComponent<Renderer>().material = matNormal;
             platform6.GetComponent<Renderer>().material = matNormal;
         }
+
+        if(onTopOf2 == true)
+        {
+            platform1.GetComponent<Renderer>().material = matChanged;
+            platform2.GetComponent<Renderer>().material = matChanged;
+            platform3.GetComponent<Renderer>().material = matChanged;
+            platform4.GetComponent<Renderer>().material = matChanged;
+            platform5.GetComponent<Renderer>().material = matChanged;
+            platform6.GetComponent<Renderer>().material = matChanged;
+        }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Player" || collider.name == "player2")
+        if(collider.tag == "Player")
         {
-            onTopOf = true;
+            onTopOf1 = true;
+        }
+
+        if(collider.tag == "Astra2")
+        {
+            onTopOf2 = true;
         }
     }
 
     void OnTriggerExit(Collider collider)
     {
-        if(collider.tag == "Player" || collider.name == "player2")
+        if(collider.tag == "Player")
         {
-            onTopOf = false;
+            onTopOf1 = false;
         }
     }
 }

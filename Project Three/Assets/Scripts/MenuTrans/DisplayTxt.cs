@@ -8,9 +8,13 @@ public class DisplayTxt : MonoBehaviour
     public GameObject conversation;
     public bool atNPC= false;
     public bool talking= false;
+    AudioSource nPCAudioSource;
+    public AudioClip nPCVoice;
 
     void Start()
-    {}
+    {
+        nPCAudioSource= GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -32,6 +36,11 @@ public class DisplayTxt : MonoBehaviour
         }
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        nPCAudioSource.PlayOneShot(clip);
+    }
+
     void ConversationOne()
     {
         if(atNPC)
@@ -46,6 +55,7 @@ public class DisplayTxt : MonoBehaviour
 
                 //enter conversation
                 conversation.SetActive(true);
+                PlaySound(nPCVoice);
                 
                 }
                 else if(Input.GetKeyDown(KeyCode.E) && conversation.activeInHierarchy)

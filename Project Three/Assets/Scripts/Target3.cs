@@ -12,11 +12,15 @@ public class Target3 : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if(isOpened == false)
-        {
-            isOpened = true;
-            gate.transform.position += new Vector3 (0f, 1.58f, 0f);
-            Destroy(symbol.gameObject);
-        }
+        
+            if(col.tag == "Arrow2")
+            {
+                if(isOpened == false)
+                {
+                    isOpened = true;
+                    gate.transform.position += new Vector3 (0f, 1.58f, 0f);
+                    Destroy(symbol.gameObject);
+                }
+            }
     }
 }

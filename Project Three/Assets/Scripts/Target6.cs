@@ -18,13 +18,17 @@ public class Target6 : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if(isOpened == false)
+        if(col.tag == "Arrow2")
         {
-            isOpened = true;
-            gate.transform.position += new Vector3 (0f, 2.0f, 0f);
-            PlaySound(unlocked);
-            Destroy(symbol.gameObject);
+            if(isOpened == false)
+            {
+                isOpened = true;
+                gate.transform.position += new Vector3 (0f, 2.0f, 0f);
+                PlaySound(unlocked);
+                Destroy(symbol.gameObject);
+            }
         }
+        
     }
 
     public void PlaySound(AudioClip clip)

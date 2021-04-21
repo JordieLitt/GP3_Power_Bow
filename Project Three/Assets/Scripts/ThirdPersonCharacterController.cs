@@ -8,11 +8,13 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     //variables
     public bool isOnGround = true;
-    public bool inRange = false;
-    public bool inRange2 = false;
-    public bool onTop1 = false;
-    public bool onTop2 = false;
+    private bool inRange = false;
+    private bool inRange2 = false;
+    private bool onTop1 = false;
+    private bool onTop2 = false;
     private bool jump;
+    public bool isInvincible;
+    public float invincibleTimer = 3;
     public float jumpForce;
     public float speed = 12f;
     public float groundCheckDistance;
@@ -34,10 +36,13 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public Image HealthThree;
     public Image HealthFour;
     Rigidbody rigidbody3D;
-    AudioSource audioSource;
     private Animator anim;
     private Camera playerCamera;
     public Shoot shootSc;
+    AudioSource astraAudioSource;
+    public AudioClip astraDamage;
+    public AudioClip astraFall;
+    public AudioClip astraJump;
   
     void Start()
     {
@@ -45,7 +50,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
         rigidbody3D = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        audioSource= GetComponent<AudioSource>();
+        astraAudioSource= GetComponent<AudioSource>();
         playerCamera = Camera.main;
 
         b = GameObject.FindGameObjectWithTag("bow");
@@ -70,8 +75,19 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 inRange2 = false;
             }
-          
         }   
+
+        if(isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            anim.SetBool("isDamaged", true);
+            if(invincibleTimer < 0)
+            {
+                isInvincible = false;
+                anim.SetBool("isDamaged", false);
+                invincibleTimer = 3;
+            }
+        }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -95,6 +111,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
+            PlaySound(astraJump);
             anim.SetTrigger("jump");
         }
         else if(Input.GetButtonUp("Jump"))
@@ -166,6 +183,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(col.gameObject. CompareTag("DamageZone"))
         {
             lives -=1;
+            PlaySound(astraFall);
             
          
             if (lives == 3)
@@ -195,8 +213,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
         }
         if(col.gameObject. CompareTag("enemy"))
         {
+            if(!isInvincible)
+            {
             lives -=1;
-            
+            PlaySound(astraDamage);
+            isInvincible = true;
          
             if (lives == 3)
             {
@@ -221,7 +242,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 Cursor.visible = true;
                 SceneManager.LoadScene("LossMenu");
             }
-            
+            }
         }
     }
 
@@ -235,7 +256,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     public void PlaySound(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        astraAudioSource.PlayOneShot(clip);
     }
 
    
