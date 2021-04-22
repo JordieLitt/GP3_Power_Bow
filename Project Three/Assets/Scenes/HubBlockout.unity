@@ -712,6 +712,7 @@ MonoBehaviour:
   conversation: {fileID: 8487715600822086057}
   atNPC: 0
   talking: 0
+  nPCVoice: {fileID: 0}
 --- !u!65 &360100681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -782,7 +783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360100679}
   m_LocalRotation: {x: -0, y: 0.3456666, z: -0, w: 0.9383575}
-  m_LocalPosition: {x: 253.3, y: 45.53, z: 45}
+  m_LocalPosition: {x: 253.3, y: 57.06, z: 45}
   m_LocalScale: {x: 54.918636, y: 19.322538, z: 19.322538}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2218,6 +2219,11 @@ PrefabInstance:
       propertyPath: mat1
       value: 
       objectReference: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
+    - target: {fileID: 5075230705341805912, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.02
+      objectReference: {fileID: 0}
     - target: {fileID: 5075230705341805913, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_audioClip
@@ -2283,6 +2289,36 @@ PrefabInstance:
       propertyPath: run
       value: 
       objectReference: {fileID: 8300000, guid: f013737a526d6344aab9781677fc46e1, type: 3}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: groundCheckDistance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: astraFall
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ae3402b3f557394086bf9323540e784, type: 3}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: astraDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 16746d28a06c96a4ea072c2512e8b08c, type: 3}
+    - target: {fileID: 5075230705341805915, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: astraJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 92f2eed8f2ddee84ebc04552469bc147, type: 3}
     - target: {fileID: 5381729804295560017, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_Name
@@ -3346,6 +3382,7 @@ MonoBehaviour:
   conversation: {fileID: 1320215505760409177}
   atNPC: 0
   talking: 0
+  nPCVoice: {fileID: 0}
 --- !u!65 &2063896834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3416,7 +3453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063896832}
   m_LocalRotation: {x: -0, y: 0.3456666, z: -0, w: 0.9383575}
-  m_LocalPosition: {x: 272.5, y: 45.53, z: 281.8}
+  m_LocalPosition: {x: 272.5, y: 56.3, z: 281.8}
   m_LocalScale: {x: 54.918636, y: 19.322538, z: 19.322538}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6715,6 +6752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 4304174589516384677}
+  startFresh: {fileID: 0}
 --- !u!114 &4304174590099069247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10169,6 +10207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  startFresh: {fileID: 0}
 --- !u!1 &9006900881477287671
 GameObject:
   m_ObjectHideFlags: 0

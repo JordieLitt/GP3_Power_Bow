@@ -110,9 +110,12 @@ public class ThirdPersonCharacterController : MonoBehaviour
         isOnGround = Physics.CheckSphere(transform.position, groundCheckDistance,groundMask);
         if(Input.GetButtonDown("Jump"))
         {
+            if(isOnGround)
+            {
             jump = true;
             PlaySound(astraJump);
             anim.SetTrigger("jump");
+            }
         }
         else if(Input.GetButtonUp("Jump"))
         {
