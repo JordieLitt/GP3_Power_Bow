@@ -6,9 +6,16 @@ public class MaterialChange : MonoBehaviour
 {
     public Material matNormal, matAstral;
 
+    private float duration;
+
     public bool abilityActive = false;
 
     public bool astralUnlock;
+
+    public void SetDuration(float duration)
+    {
+        this.duration = duration;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +43,7 @@ public class MaterialChange : MonoBehaviour
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(duration);
         GetComponent<Renderer>().material = matNormal;
         abilityActive = false;
     }

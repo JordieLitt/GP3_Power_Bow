@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,17 +7,23 @@ public class AstralProjection : MonoBehaviour
     private bool abilityActive = false;
     public bool unlockedAstral = false;
 
+    public GameObject energyBar;
+    public GameObject energyBall;
     public GameObject player2Prefab;
     public GameObject player;
     private GameObject player2;
     private GameObject g;
-
+    [SerializeField] private float duration = 10;
     public MaterialChange matChange;
+
+    // This is used specifcally for the duration.
+    public static event System.Action<float> OnAstralProject;
+    public static event System.Action OnAstralProjectCancel;
 
     void Start()
     {
         g = GameObject.FindGameObjectWithTag("materialCh");
-
+        
         matChange = g.GetComponent<MaterialChange>();
     }
 
@@ -25,6 +31,8 @@ public class AstralProjection : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive && unlockedAstral == true)
         {
+            energyBar.SetActive(true);
+            energyBall.SetActive(true);
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
             player2.transform.Rotate(0, 0, 0);
             StartCoroutine(ResetPosition());
@@ -32,9 +40,12 @@ public class AstralProjection : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R) && abilityActive == true)
         {
+            energyBar.SetActive(false);
+            energyBall.SetActive(false);
             player.transform.position = player2.transform.position;
             Destroy(player2.gameObject);
             abilityActive = false;
+            OnAstralProjectCancel?.Invoke();
             StopCoroutine(ResetPosition());
         }
     }
@@ -42,7 +53,9 @@ public class AstralProjection : MonoBehaviour
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
-        yield return new WaitForSeconds(10);
+        matChange.SetDuration(this.duration);
+        OnAstralProject?.Invoke(duration);
+        yield return new WaitForSeconds(duration);
         player.transform.position = player2.transform.position;
         Destroy(player2.gameObject);
         abilityActive = false;
