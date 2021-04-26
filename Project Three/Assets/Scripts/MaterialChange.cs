@@ -6,7 +6,7 @@ public class MaterialChange : MonoBehaviour
 {
     public Material matNormal, matAstral;
 
-    private float duration;
+    public float duration;
 
     public bool abilityActive = false;
 

@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    if(CrystalChecker.instance.crystals == 0)
+    if(CrystalChecker.instance != null && CrystalChecker.instance.crystals == 0)
     {
       startFresh.SetActive(false);
     }

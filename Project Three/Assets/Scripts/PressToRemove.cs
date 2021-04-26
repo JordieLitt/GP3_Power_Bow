@@ -22,19 +22,20 @@ public class PressToRemove : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
-            isSteppedOn = true;
+            if(isSteppedOn == false)
+            {
+                isSteppedOn = true;
+                platform.SetActive(false);
+                platform2.SetActive(false);
+                target1.SetActive(false);
+                target2.SetActive(true);
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isSteppedOn == true)
-        {
-            platform.SetActive(false);
-            platform2.SetActive(false);
-            target1.SetActive(false);
-            target2.SetActive(true);
-        }
+       
     }
 }

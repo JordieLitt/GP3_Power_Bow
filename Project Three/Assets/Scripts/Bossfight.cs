@@ -15,7 +15,6 @@ public class Bossfight : MonoBehaviour
 
     void Start()
     {
-        platforms.SetActive(false);
         finalPlat.SetActive(false);
         ambience.Play();
     }
@@ -24,7 +23,7 @@ public class Bossfight : MonoBehaviour
     {
         if(hit == true)
         {
-            platforms.SetActive(true);
+            platforms.transform.position = new Vector3(334, 161, 428);
             Vector3 a = transform.position;
             Vector3 b = target.position;
             transform.position = Vector3.MoveTowards(a, b, speed);

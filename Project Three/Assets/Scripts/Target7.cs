@@ -14,9 +14,12 @@ public class Target7 : MonoBehaviour
     {
         if(col.tag == "Arrow2")
         {
-            isOpened = true;
-            gate.transform.position += new Vector3 (0f, 7.45f, 0f);
-            Destroy(symbol);
+            if(isOpened == false)
+            {
+                isOpened = true;
+                gate.transform.position += new Vector3 (0f, 7.45f, 0f);
+                Destroy(symbol);
+            }
         }
     }
 }

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/WinMenu.unity
     guid: afb69c2eeb986a741b0280347ce62505
   - enabled: 0
-    path: Assets/Scenes/Level 1.unity
-    guid: 407faaec37d1a9a488baef40b45304d0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Test/CrystalManager.unity
+    guid: 4290938d071a8754ea3d97b7795d0ccc
   m_configObjects: {}

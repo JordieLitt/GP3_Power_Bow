@@ -13,7 +13,8 @@ public class AstralProjection : MonoBehaviour
     public GameObject player;
     private GameObject player2;
     private GameObject g;
-    [SerializeField] private float duration = 10;
+    private IEnumerator _astralModeCour;
+    [SerializeField] private float duration;
     public MaterialChange matChange;
 
     // This is used specifcally for the duration.
@@ -35,7 +36,9 @@ public class AstralProjection : MonoBehaviour
             energyBall.SetActive(true);
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
             player2.transform.Rotate(0, 0, 0);
-            StartCoroutine(ResetPosition());
+            // Logically, _astralModeCour should always be null once reaching this point since one Coroutine runs at a time.
+            _astralModeCour = ResetPosition();
+            StartCoroutine(_astralModeCour);
         }
 
         if(Input.GetKeyDown(KeyCode.R) && abilityActive == true)
@@ -46,13 +49,17 @@ public class AstralProjection : MonoBehaviour
             Destroy(player2.gameObject);
             abilityActive = false;
             OnAstralProjectCancel?.Invoke();
-            StopCoroutine(ResetPosition());
+            StopCoroutine(_astralModeCour);
+            _astralModeCour = null;
         }
     }
 
+    // ResetPosition() creates a new instance of IEnumerator, it is not a static instance that can be referenced again.
+    // StopCoroutine(ResetPositon ()) does not reference the running couroutine that was started, it needs to be cached
     private IEnumerator ResetPosition()
     {
         abilityActive = true;
+
         matChange.SetDuration(this.duration);
         OnAstralProject?.Invoke(duration);
         yield return new WaitForSeconds(duration);

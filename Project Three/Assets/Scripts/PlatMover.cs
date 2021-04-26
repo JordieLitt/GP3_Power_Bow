@@ -37,6 +37,8 @@ public class PlatMover : MonoBehaviour
           transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Mathf.PingPong (fracJourney, 1));
     }
 
+    // Another approach aside from parenting, is to add the velocity of the platform to the player basically.
+
     private void OnCollisionEnter(Collision collision)
     {
       if(collision.gameObject.tag == "Player")

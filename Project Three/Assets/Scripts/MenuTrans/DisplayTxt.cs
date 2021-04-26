@@ -5,11 +5,14 @@ using UnityEngine;
 public class DisplayTxt : MonoBehaviour
 {
     public GameObject message;
-    public GameObject conversation;
+    public GameObject conversationOne;
+    public GameObject conversationTwo;
+    public GameObject conversationThree;
     public bool atNPC= false;
-    public bool talking= false;
     AudioSource nPCAudioSource;
     public AudioClip nPCVoice;
+    public int expectedCountOne;
+    public int expectedCountTwo;
 
     void Start()
     {
@@ -18,7 +21,7 @@ public class DisplayTxt : MonoBehaviour
 
     void Update()
     {
-        ConversationOne();
+        Conversation();
     }
     void OnTriggerEnter(Collider col)
     {
@@ -32,7 +35,7 @@ public class DisplayTxt : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
           atNPC = false;
-          conversation.SetActive(false);
+          ConversationFalse();
         }
     }
 
@@ -41,34 +44,69 @@ public class DisplayTxt : MonoBehaviour
         nPCAudioSource.PlayOneShot(clip);
     }
 
-    void ConversationOne()
+    void Conversation()
     {
         if(atNPC)
         {
-            //display message
             message.SetActive(true);
             
-            if(!talking)
+            
+            if(CrystalChecker.instance.crystals < expectedCountOne)
             {
-                if(Input.GetKeyDown(KeyCode.E) && !conversation.activeInHierarchy)
+                if(Input.GetKeyDown(KeyCode.E) && !conversationOne.activeInHierarchy)
                 {
 
                 //enter conversation
-                conversation.SetActive(true);
+                conversationOne.SetActive(true);
                 PlaySound(nPCVoice);
                 
                 }
-                else if(Input.GetKeyDown(KeyCode.E) && conversation.activeInHierarchy)
+                else if(Input.GetKeyDown(KeyCode.E) && conversationOne.activeInHierarchy)
                 {
-                     conversation.SetActive(false);
+                 conversationOne.SetActive(false);
                 }
             }
+            else
+            {
+                if(Input.GetKeyDown(KeyCode.E) && !conversationTwo.activeInHierarchy)
+                {
+                //enter conversation
+                conversationTwo.SetActive(true);
+                PlaySound(nPCVoice);
+                
+                }
+                else if(Input.GetKeyDown(KeyCode.E) && conversationTwo.activeInHierarchy)
+                {
+                 conversationTwo.SetActive(false);
+                }
+            }
+            if(CrystalChecker.instance.crystals >= expectedCountTwo)
+            {
+                if(Input.GetKeyDown(KeyCode.E) && !conversationThree.activeInHierarchy)
+                {
 
+                //enter conversation
+                conversationThree.SetActive(true);
+                 PlaySound(nPCVoice);
+                
+                }
+                else if(Input.GetKeyDown(KeyCode.E) && conversationThree.activeInHierarchy)
+                {
+                 conversationThree.SetActive(false);
+                }
+            }                    
         }
         else
         {
             //close message
             message.SetActive(false);
         }
+    }
+
+    void ConversationFalse()
+    {
+        conversationOne.SetActive(false);
+        conversationTwo.SetActive(false);
+        conversationThree.SetActive(false);
     }
 }

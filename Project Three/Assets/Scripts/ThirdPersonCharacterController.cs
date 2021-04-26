@@ -8,10 +8,12 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     //variables
     public bool isOnGround = true;
+    private bool wasOnGroundLastFrame = false;
     private bool inRange = false;
     private bool inRange2 = false;
     private bool onTop1 = false;
     private bool onTop2 = false;
+    public bool hasPulled = false;
     private bool jump;
     public bool isInvincible;
     public float invincibleTimer = 3;
@@ -43,6 +45,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public AudioClip astraDamage;
     public AudioClip astraFall;
     public AudioClip astraJump;
+    public GameObject Message2;
+    
   
     void Start()
     {
@@ -60,6 +64,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     void Update()
     {
+        wasOnGroundLastFrame = isOnGround;
+
         RaycastHit hit2;
         Vector3 forward2 = transform.TransformDirection(Vector3.up * 0.75f) * distanceAhead2;
         Debug.DrawRay(transform.position, forward2, Color.blue);
@@ -75,7 +81,17 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 inRange2 = false;
             }
-        }   
+        }
+
+        //if(inRange2 == true)
+        //{
+        //    Message2.SetActive(true);
+        //}
+
+        //if(inRange2 == false)
+        //{
+        //    Message2.SetActive(false);
+        //}
 
         if(isInvincible)
         {
@@ -99,35 +115,41 @@ public class ThirdPersonCharacterController : MonoBehaviour
             {
                 if(hit.collider.tag == "Lever")
                 {
-                    platforms.SetActive(false);
-                    gate.transform.position  += new Vector3 (0f, 7.45f, 0f);
+                    if(hasPulled == false)
+                    {
+                        hasPulled = true;
+                        platforms.SetActive(false);
+                        gate.transform.position  += new Vector3 (0f, 7.45f, 0f);
+                    }
                 }
             }
         }
 
         AttackAni();
 
-        isOnGround = Physics.CheckSphere(transform.position, groundCheckDistance,groundMask);
-        if(Input.GetButtonDown("Jump"))
+        isOnGround = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+
+        if(Input.GetButtonDown("Jump") && isOnGround)
         {
-            if(isOnGround)
-            {
-            jump = true;
+            rigidbody3D.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             PlaySound(astraJump);
             anim.SetTrigger("jump");
-            }
+            
         }
-        else if(Input.GetButtonUp("Jump"))
-        {
-            jump = false;
-            anim.SetTrigger("land");
+        // else if(Input.GetButtonUp("Jump"))
+        // {
+        //     jump = false;
+        //     anim.SetTrigger("land");
+        // }
+        if(!wasOnGroundLastFrame && isOnGround)
+        {anim.SetTrigger("land");
+            
         }
+
 
         hor = Input.GetAxis("Horizontal") * playerCamera.transform.right;
         ver = Input.GetAxis("Vertical") * playerCamera.transform.forward;
         Vector3 playerMovement = (hor + ver) * speed;
-        print($"This is the forward vector:{playerCamera.transform.forward}");
-        print($"This is the right vector:{playerCamera.transform.right}");
 
         if(playerMovement != Vector3.zero && !Input.GetKey(KeyCode.Space))
         {
@@ -146,22 +168,29 @@ public class ThirdPersonCharacterController : MonoBehaviour
             anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
             }
         }
+        //crystal count cheat
+        if(Input.GetKeyDown(KeyCode.F11))
+        {
+            CrystalChecker.instance.crystals += 1;
+        }
+        if(Input.GetKeyDown(KeyCode.F12))
+        {
+            CrystalChecker.instance.crystals -= 1;
+        }
     }
 
     void FixedUpdate()
-    {
-       if(jump && isOnGround)
-       {
-           rigidbody3D.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-       }
-       
+    { 
        Vector3 playerMovement = (hor + ver) * speed;
        playerMovement.y = 0;
        rigidbody3D.velocity = new Vector3(playerMovement.x, rigidbody3D.velocity.y, playerMovement.z);
     }
     
+    void LateUpdate()
+    {
+        anim.SetFloat("yVelocity", rigidbody3D.velocity.y);
+    }
 
-    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "PPlate1")
@@ -172,6 +201,20 @@ public class ThirdPersonCharacterController : MonoBehaviour
         if(collision.gameObject.tag == "PPlate2")
         {
             onTop2 = true;
+        }
+
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("onPlatform", true);
+        }
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("onPlatform", false);
         }
     }
 
@@ -262,5 +305,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
         astraAudioSource.PlayOneShot(clip);
     }
 
-   
+   void OnDrawGizmosSelected()
+   {
+       Gizmos.DrawWireSphere(transform.position, groundCheckDistance);
+   }
 }

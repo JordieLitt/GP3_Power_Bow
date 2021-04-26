@@ -16,7 +16,7 @@ public class OBjMatChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CrystalChecker.instance.crystals >= expectedCount)
+        if(CrystalChecker.instance != null && CrystalChecker.instance.crystals >= expectedCount)
         {
             GetComponent<Renderer>().material = cleanseMat;
         }

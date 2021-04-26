@@ -47,7 +47,7 @@ public class CrystalFunctions : MonoBehaviour
 
     void IsCleansed()
     {
-        if(CrystalChecker.instance.crystals >= expectedCount)
+        if(CrystalChecker.instance?.crystals >= expectedCount)
         {
             alreadyCleansed = true;
             GetComponent<Renderer>().material = cleanseMat;
@@ -63,8 +63,8 @@ public class CrystalFunctions : MonoBehaviour
                 cleanseMessage.SetActive(true);
                 if(Input.GetKeyDown(KeyCode.E))
                 {
-                CrystalChecker.instance.crystals += 1;
-                cleanseMessage.SetActive(false);
+                    CrystalChecker.instance.crystals += 1;
+                    cleanseMessage.SetActive(false);
                 }
             }
         }
