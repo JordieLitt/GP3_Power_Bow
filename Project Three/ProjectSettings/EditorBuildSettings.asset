@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test/CrystalManager.unity
     guid: 4290938d071a8754ea3d97b7795d0ccc
+  - enabled: 1
+    path: Assets/Scenes/SecretScene.unity
+    guid: 41a4132e42a3804419001e36ca9cb15a
   m_configObjects: {}

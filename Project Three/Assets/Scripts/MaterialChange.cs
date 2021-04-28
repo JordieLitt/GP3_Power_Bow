@@ -11,6 +11,7 @@ public class MaterialChange : MonoBehaviour
     public bool abilityActive = false;
 
     public bool astralUnlock;
+    private IEnumerator _astralModeCour;
 
     public void SetDuration(float duration)
     {
@@ -29,14 +30,15 @@ public class MaterialChange : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && !abilityActive && astralUnlock == true)
         {
             GetComponent<Renderer>().material = matAstral;
-            StartCoroutine(ResetPosition());
+            _astralModeCour = ResetPosition();
+            StartCoroutine(_astralModeCour);
         }
 
         if(Input.GetKeyDown(KeyCode.R) && abilityActive == true)
         {
             GetComponent<Renderer>().material = matNormal;
-            abilityActive = false;
-            StopCoroutine(ResetPosition());
+            StopCoroutine(_astralModeCour);
+            _astralModeCour = null;
         }
     }
 

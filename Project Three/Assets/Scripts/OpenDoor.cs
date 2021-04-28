@@ -8,14 +8,21 @@ public class OpenDoor : MonoBehaviour
     public bool astra2On = false;
     public bool projection = false;
     public bool isOpened = false;
+    public bool unlockedAstral = false;
+    public bool check = false;
 
     public GameObject pPlate1;
-    public GameObject gate;
+    public GameObject pPlate2;
+    public GameObject target;
+    private GameObject m_plate;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        target.SetActive(false);
+        pPlate1.SetActive(false);
+        pPlate2.SetActive(true);
+        m_plate = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -30,7 +37,24 @@ public class OpenDoor : MonoBehaviour
         if(projection == true && astraOn == true && astra2On)
         {
             isOpened = true;
-            gate.transform.position += new Vector3 (0f, 7.45f, 0f);
+            target.SetActive(true);
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            projection = false;
+        }
+
+        if(m_plate.GetComponent<ThirdPersonCharacterController>().onTop3)
+        {
+            astra2On = true;
+            check = true;
+        }
+
+        if(projection == true)
+        {
+            pPlate1.SetActive(true);
+            pPlate2.SetActive(false);
         }
     }
 
@@ -38,18 +62,16 @@ public class OpenDoor : MonoBehaviour
     {
         if(collider.tag == "Player" && projection == true)
         {
-            if (astraOn != true)
-            {
-                astraOn = true;
-            }
+            astraOn = true;
+            pPlate1.SetActive(true);
+            pPlate2.SetActive(false);
         }
 
         if(collider.tag == "Astra2" && projection == true)
         {
-            if (astra2On != true)
-            {
-                astra2On = true;
-            }
+            astraOn = true;
+            pPlate1.SetActive(true);
+            pPlate2.SetActive(false);
         }
     }
 
@@ -59,16 +81,11 @@ public class OpenDoor : MonoBehaviour
         {
             astraOn = false;
         }
-
-        if(collider.tag == "Astra2")
-        {
-            astra2On = false;
-        }
     }
 
     private IEnumerator projectionEnd()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(30);
         projection = false;
     }
 }

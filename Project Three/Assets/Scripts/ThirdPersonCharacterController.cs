@@ -13,6 +13,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     private bool inRange2 = false;
     private bool onTop1 = false;
     private bool onTop2 = false;
+    public bool onTop3 = false;
     public bool hasPulled = false;
     private bool jump;
     public bool isInvincible;
@@ -142,8 +143,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
         //     anim.SetTrigger("land");
         // }
         if(!wasOnGroundLastFrame && isOnGround)
-        {anim.SetTrigger("land");
-            
+        {
+            anim.SetTrigger("land");
         }
 
 
@@ -182,7 +183,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void FixedUpdate()
     { 
        Vector3 playerMovement = (hor + ver) * speed;
-       playerMovement.y = 0;
+       //playerMovement.y = 0;
        rigidbody3D.velocity = new Vector3(playerMovement.x, rigidbody3D.velocity.y, playerMovement.z);
     }
     
@@ -208,6 +209,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
             anim.SetBool("onPlatform", true);
         }
 
+       
     }
 
     private void OnCollisionExit(Collision collision)
@@ -289,6 +291,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
                 SceneManager.LoadScene("LossMenu");
             }
             }
+        }
+
+         if(col.gameObject.tag == "plate2")
+        {
+            onTop3 = true;
         }
     }
 

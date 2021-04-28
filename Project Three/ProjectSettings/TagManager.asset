@@ -32,6 +32,7 @@ TagManager:
   - Forest
   - Lever
   - enemy
+  - NoPass
   layers:
   - Default
   - TransparentFX

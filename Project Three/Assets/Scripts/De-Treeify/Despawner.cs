@@ -20,6 +20,30 @@ public class Despawner : MonoBehaviour
         capturedObjects = new List<GameObject>();
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F10))
+        {
+            Despawn();
+        }
+    }
+
+    void Despawn()
+    {
+        capturedObjects.Clear();
+
+            // Find all targets within range of radius.
+            var hitResults = Physics.SphereCastAll(transform.position, radius, Vector3.forward, 1, targetMask);
+
+            // Go through the array of target information and add them to our gameobject list (The trees)
+            // Then set them to inactive to hide them.
+            foreach(var item in hitResults)
+            {
+                capturedObjects.Add(item.collider.gameObject);
+                item.collider.gameObject.SetActive(false);
+            }
+    }
+
 
     void OnTriggerEnter(Collider collider)
     {
@@ -41,18 +65,7 @@ public class Despawner : MonoBehaviour
         if(collider.CompareTag("Player"))
         {
             print("Exited the despawner zone.");
-            capturedObjects.Clear();
-
-            // Find all targets within range of radius.
-            var hitResults = Physics.SphereCastAll(transform.position, radius, Vector3.forward, 1, targetMask);
-
-            // Go through the array of target information and add them to our gameobject list (The trees)
-            // Then set them to inactive to hide them.
-            foreach(var item in hitResults)
-            {
-                capturedObjects.Add(item.collider.gameObject);
-                item.collider.gameObject.SetActive(false);
-            }
+            Despawn();
         }
 
     }

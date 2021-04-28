@@ -27,7 +27,10 @@ public class ShootToAppear : MonoBehaviour
     {
         if(collider.tag == "Arrow2")
         {
-            isShot = true;
+            if(isShot == false)
+            {
+                isShot = true;
+            }
         }
     }
 }

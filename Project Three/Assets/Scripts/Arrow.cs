@@ -49,6 +49,21 @@ public class Arrow : MonoBehaviour
             PlaySound(astralImpact);
             Destroy(gameObject);
         }
+
+        if(collision.collider.tag == "NoPass")
+        {
+            Destroy(gameObject);
+            hitSomething = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collision collision)
+    {
+        if(collision.collider.tag == "NoPass")
+        {
+            Destroy(gameObject);
+            hitSomething = false;
+        }
     }
 
     private void Stick()

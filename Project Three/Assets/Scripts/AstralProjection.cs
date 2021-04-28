@@ -15,17 +15,19 @@ public class AstralProjection : MonoBehaviour
     private GameObject g;
     private IEnumerator _astralModeCour;
     [SerializeField] private float duration;
-    public MaterialChange matChange;
+    [SerializeField] private Material matNormal, matAstral;
 
     // This is used specifcally for the duration.
     public static event System.Action<float> OnAstralProject;
     public static event System.Action OnAstralProjectCancel;
 
+    private Renderer matRenderer;
+
     void Start()
     {
+        matRenderer = this.GetComponentInChildren<Renderer>();
         g = GameObject.FindGameObjectWithTag("materialCh");
         
-        matChange = g.GetComponent<MaterialChange>();
     }
 
     void Update()
@@ -36,7 +38,7 @@ public class AstralProjection : MonoBehaviour
             energyBall.SetActive(true);
             player2 = Instantiate(player2Prefab, transform.position, transform.rotation);
             player2.transform.Rotate(0, 0, 0);
-            // Logically, _astralModeCour should always be null once reaching this point since one Coroutine runs at a time.
+            matRenderer.material = matAstral;
             _astralModeCour = ResetPosition();
             StartCoroutine(_astralModeCour);
         }
@@ -50,6 +52,7 @@ public class AstralProjection : MonoBehaviour
             abilityActive = false;
             OnAstralProjectCancel?.Invoke();
             StopCoroutine(_astralModeCour);
+            matRenderer.material = matNormal;
             _astralModeCour = null;
         }
     }
@@ -60,12 +63,12 @@ public class AstralProjection : MonoBehaviour
     {
         abilityActive = true;
 
-        matChange.SetDuration(this.duration);
         OnAstralProject?.Invoke(duration);
         yield return new WaitForSeconds(duration);
         player.transform.position = player2.transform.position;
         Destroy(player2.gameObject);
         abilityActive = false;
+        matRenderer.material = matNormal;
     }
 
     void OnTriggerEnter(Collider col)
@@ -74,7 +77,6 @@ public class AstralProjection : MonoBehaviour
         {
             unlockedAstral = true;
             Destroy(col.gameObject);
-            matChange.astralUnlock = true;
         }
     }
 }

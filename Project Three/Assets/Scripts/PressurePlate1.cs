@@ -54,7 +54,7 @@ public class PressurePlate1 : MonoBehaviour
 
     private IEnumerator projectionEnd()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(30);
         projection = false;
     }
 }
