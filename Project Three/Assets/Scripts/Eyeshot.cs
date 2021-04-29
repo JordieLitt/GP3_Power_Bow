@@ -9,6 +9,7 @@ public class eyeShot : MonoBehaviour
     public GameObject platform1;
     public GameObject platform2;
     public GameObject platform3;
+    public Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +20,9 @@ public class eyeShot : MonoBehaviour
        platform3.SetActive(false); 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        LookAtPlayer();
     }
 
     void OnTriggerEnter(Collider col)
@@ -49,5 +49,12 @@ public class eyeShot : MonoBehaviour
                 Destroy(cyclops);
             }
         }
+    }
+
+    void LookAtPlayer()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = rotation;
     }
 }

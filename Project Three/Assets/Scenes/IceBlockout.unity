@@ -1711,7 +1711,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3011a1940bbae8546981aed739efc1bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3011a1940bbae8546981aed739efc1bd,
         type: 3}
@@ -2541,7 +2541,7 @@ Transform:
   - {fileID: 2094986726}
   - {fileID: 271828281}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &141232224
 PrefabInstance:
@@ -2588,7 +2588,7 @@ PrefabInstance:
     - target: {fileID: 1190847832210322135, guid: 60766a3bd700fd74fa8382e566c3d07f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1190847832210322135, guid: 60766a3bd700fd74fa8382e566c3d07f,
         type: 3}
@@ -8222,7 +8222,7 @@ PrefabInstance:
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 43
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
@@ -10667,7 +10667,7 @@ PrefabInstance:
     - target: {fileID: 1190847832210322135, guid: 60766a3bd700fd74fa8382e566c3d07f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 54
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 1190847832210322135, guid: 60766a3bd700fd74fa8382e566c3d07f,
         type: 3}
@@ -11009,7 +11009,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &483102384
 PrefabInstance:
@@ -12878,7 +12878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &560216573
 PrefabInstance:
@@ -17343,13 +17343,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744412425}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.0028679706, z: 0, w: 0.99999595}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: -0.329, z: 0}
 --- !u!1001 &749246241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18454,7 +18454,7 @@ Transform:
   - {fileID: 1505304012}
   - {fileID: 1517755161}
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &790227185
 PrefabInstance:
@@ -19730,7 +19730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &849346938
 PrefabInstance:
@@ -20998,7 +20998,7 @@ PrefabInstance:
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
@@ -25472,7 +25472,7 @@ PrefabInstance:
     - target: {fileID: 2083353309216343721, guid: 271b4294be050b046903383a56c2edfa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 56
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2083353309216343721, guid: 271b4294be050b046903383a56c2edfa,
         type: 3}
@@ -34984,7 +34984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1442017536
 PrefabInstance:
@@ -35752,7 +35752,7 @@ PrefabInstance:
     - target: {fileID: 6502219035406135617, guid: e37e19d7fb2b01a4a99541f4bbba2292,
         type: 3}
       propertyPath: m_RootOrder
-      value: 52
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 6502219035406135617, guid: e37e19d7fb2b01a4a99541f4bbba2292,
         type: 3}
@@ -40380,7 +40380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1685317712
 PrefabInstance:
@@ -41345,7 +41345,7 @@ Transform:
   - {fileID: 1089676930}
   - {fileID: 1984912138}
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1728396836
 PrefabInstance:
@@ -45667,7 +45667,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3011a1940bbae8546981aed739efc1bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3011a1940bbae8546981aed739efc1bd,
         type: 3}
@@ -51875,6 +51875,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4078137291403234608, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078137291403234608, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078137291403234608, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4202540834986038317, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_TagString
@@ -51918,7 +51933,7 @@ PrefabInstance:
     - target: {fileID: 4748040934310740459, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4748040934310740459, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
@@ -51945,6 +51960,11 @@ PrefabInstance:
       propertyPath: mat2
       value: 
       objectReference: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
+    - target: {fileID: 5075230703994801175, guid: def934d8ff5614b42915a483ed0bba62,
+        type: 3}
+      propertyPath: shootForce2
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5075230705341805911, guid: def934d8ff5614b42915a483ed0bba62,
         type: 3}
       propertyPath: m_Mass
@@ -54018,8 +54038,7 @@ MonoBehaviour:
 
     Hold LMB/RB1
 
-    to aim and
-    hit targets'
+    to aim and hit targets'
 --- !u!1 &1169766707911704779
 GameObject:
   m_ObjectHideFlags: 0
@@ -55000,7 +55019,7 @@ PrefabInstance:
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2728733069990955212, guid: e13c989b2445dfb419d3cb8198b1079c,
         type: 3}
@@ -55706,7 +55725,7 @@ RectTransform:
   - {fileID: 7128114647645805671}
   - {fileID: 1699851682576595341}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -56459,11 +56478,9 @@ MonoBehaviour:
 
     AstraMagnus Archibald Leviticus''.
 
-    It
-    is up to you, the seventh, to right this
+    It is up to you, the seventh, to right this
 
-    failure, and cleanse the crystals
-    again.'
+    failure, and cleanse the crystals again.'
 --- !u!114 &4161149173015126864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57379,8 +57396,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'These circles respond to our Astral energy
 
-    stand in them to active
-    secrets
+    stand in them to active secrets
 
     and pathways forward'
 --- !u!222 &5639895378024205832
@@ -57824,8 +57840,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Young astra... The crystal of my world has\nbeen tainted. Master your
-    families ability\nto astral project to cleanse my worlds \ncrystal"
+  m_Text: "Young astra... The crystal of my world has\nbeen tainted. Master your families
+    ability\nto astral project to cleanse my worlds \ncrystal"
 --- !u!224 &6144765590670880476
 RectTransform:
   m_ObjectHideFlags: 0

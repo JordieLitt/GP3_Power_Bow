@@ -30,6 +30,7 @@ public class ShootToAppear : MonoBehaviour
             if(isShot == false)
             {
                 isShot = true;
+                item.SetActive(true);
             }
         }
     }
