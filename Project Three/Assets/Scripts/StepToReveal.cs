@@ -6,6 +6,8 @@ public class StepToReveal : MonoBehaviour
 {
     public GameObject platform1, platform2, platform3, platform4, platform5, platform6;
 
+    public GameObject path;
+
     public Material matNormal, matChanged;
 
     public bool onTopOf1;
@@ -14,6 +16,8 @@ public class StepToReveal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        path.SetActive(false);
+
         platform1.GetComponent<Renderer>().material = matNormal;
         platform2.GetComponent<Renderer>().material = matNormal;
         platform3.GetComponent<Renderer>().material = matNormal;
@@ -27,6 +31,8 @@ public class StepToReveal : MonoBehaviour
     {
         if(onTopOf2 == false)
         {
+            path.SetActive(false);
+
             platform1.GetComponent<Renderer>().material = matNormal;
             platform2.GetComponent<Renderer>().material = matNormal;
             platform3.GetComponent<Renderer>().material = matNormal;
@@ -37,6 +43,8 @@ public class StepToReveal : MonoBehaviour
 
         if(onTopOf1 == true)
         {
+            path.SetActive(true);
+
             platform1.GetComponent<Renderer>().material = matChanged;
             platform2.GetComponent<Renderer>().material = matChanged;
             platform3.GetComponent<Renderer>().material = matChanged;
@@ -47,6 +55,8 @@ public class StepToReveal : MonoBehaviour
 
         if(onTopOf1 == false)
         {
+            path.SetActive(false);
+
             platform1.GetComponent<Renderer>().material = matNormal;
             platform2.GetComponent<Renderer>().material = matNormal;
             platform3.GetComponent<Renderer>().material = matNormal;
@@ -57,6 +67,8 @@ public class StepToReveal : MonoBehaviour
 
         if(onTopOf2 == true)
         {
+            path.SetActive(true);
+
             platform1.GetComponent<Renderer>().material = matChanged;
             platform2.GetComponent<Renderer>().material = matChanged;
             platform3.GetComponent<Renderer>().material = matChanged;
