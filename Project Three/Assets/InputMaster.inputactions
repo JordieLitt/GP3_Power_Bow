@@ -30,9 +30,33 @@
                     "interactions": ""
                 },
                 {
-                    "name": "New action",
+                    "name": "Astral Projection",
                     "type": "Button",
                     "id": "a5069504-6a41-435a-b0a9-63ec8c55ab70",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Arrows",
+                    "type": "Button",
+                    "id": "b47e68fb-121a-4270-b926-4a351f6fd279",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Astral Arrows",
+                    "type": "Button",
+                    "id": "0e58d8d0-a5ec-43d7-8725-6f7b6984a20e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "9297e0d8-cfd5-477b-9503-ab4ce587628a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -42,7 +66,7 @@
                 {
                     "name": "",
                     "id": "93c5ce40-48b1-4ec6-8683-cb049459bca1",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<XboxOneGampadiOS>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
@@ -53,7 +77,7 @@
                 {
                     "name": "",
                     "id": "294b0481-756f-4d80-80cd-f7cc461d82e3",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<XboxOneGampadiOS>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
@@ -64,7 +88,7 @@
                 {
                     "name": "",
                     "id": "8bcd110e-90fd-49e3-935a-4fe1d8a284f0",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<XboxOneGampadiOS>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
@@ -75,11 +99,44 @@
                 {
                     "name": "",
                     "id": "5639f293-8dce-4aa5-ba7f-de8046fcb001",
-                    "path": "",
+                    "path": "<XboxOneGampadiOS>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "New control scheme",
+                    "action": "Astral Projection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9872ea7c-7fb3-43de-b946-c180694953c7",
+                    "path": "<XboxOneGampadiOS>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Arrows",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c4621b6-1846-42c8-816f-25dd0363ca9a",
+                    "path": "<XboxOneGampadiOS>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Astral Arrows",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59c42e1d-29dc-4f80-861d-8dd01fd87974",
+                    "path": "<XboxOneGampadiOS>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

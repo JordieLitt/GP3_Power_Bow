@@ -43,9 +43,33 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Astral Projection"",
                     ""type"": ""Button"",
                     ""id"": ""a5069504-6a41-435a-b0a9-63ec8c55ab70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""type"": ""Button"",
+                    ""id"": ""b47e68fb-121a-4270-b926-4a351f6fd279"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Astral Arrows"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e58d8d0-a5ec-43d7-8725-6f7b6984a20e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""9297e0d8-cfd5-477b-9503-ab4ce587628a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -55,7 +79,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""93c5ce40-48b1-4ec6-8683-cb049459bca1"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<XboxOneGampadiOS>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
@@ -66,7 +90,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""294b0481-756f-4d80-80cd-f7cc461d82e3"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<XboxOneGampadiOS>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
@@ -77,7 +101,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8bcd110e-90fd-49e3-935a-4fe1d8a284f0"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""path"": ""<XboxOneGampadiOS>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
@@ -88,11 +112,44 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5639f293-8dce-4aa5-ba7f-de8046fcb001"",
-                    ""path"": """",
+                    ""path"": ""<XboxOneGampadiOS>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""Astral Projection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9872ea7c-7fb3-43de-b946-c180694953c7"",
+                    ""path"": ""<XboxOneGampadiOS>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""Arrows"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c4621b6-1846-42c8-816f-25dd0363ca9a"",
+                    ""path"": ""<XboxOneGampadiOS>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""Astral Arrows"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59c42e1d-29dc-4f80-861d-8dd01fd87974"",
+                    ""path"": ""<XboxOneGampadiOS>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -118,7 +175,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
-        m_Player_Newaction = m_Player.FindAction("New action", throwIfNotFound: true);
+        m_Player_AstralProjection = m_Player.FindAction("Astral Projection", throwIfNotFound: true);
+        m_Player_Arrows = m_Player.FindAction("Arrows", throwIfNotFound: true);
+        m_Player_AstralArrows = m_Player.FindAction("Astral Arrows", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -171,7 +231,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Camera;
-    private readonly InputAction m_Player_Newaction;
+    private readonly InputAction m_Player_AstralProjection;
+    private readonly InputAction m_Player_Arrows;
+    private readonly InputAction m_Player_AstralArrows;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -179,7 +242,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
-        public InputAction @Newaction => m_Wrapper.m_Player_Newaction;
+        public InputAction @AstralProjection => m_Wrapper.m_Player_AstralProjection;
+        public InputAction @Arrows => m_Wrapper.m_Player_Arrows;
+        public InputAction @AstralArrows => m_Wrapper.m_Player_AstralArrows;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -198,9 +264,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
-                @Newaction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewaction;
+                @AstralProjection.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralProjection;
+                @AstralProjection.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralProjection;
+                @AstralProjection.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralProjection;
+                @Arrows.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrows;
+                @Arrows.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrows;
+                @Arrows.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrows;
+                @AstralArrows.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralArrows;
+                @AstralArrows.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralArrows;
+                @AstralArrows.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAstralArrows;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -214,9 +289,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Camera.started += instance.OnCamera;
                 @Camera.performed += instance.OnCamera;
                 @Camera.canceled += instance.OnCamera;
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @AstralProjection.started += instance.OnAstralProjection;
+                @AstralProjection.performed += instance.OnAstralProjection;
+                @AstralProjection.canceled += instance.OnAstralProjection;
+                @Arrows.started += instance.OnArrows;
+                @Arrows.performed += instance.OnArrows;
+                @Arrows.canceled += instance.OnArrows;
+                @AstralArrows.started += instance.OnAstralArrows;
+                @AstralArrows.performed += instance.OnAstralArrows;
+                @AstralArrows.canceled += instance.OnAstralArrows;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -235,6 +319,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnAstralProjection(InputAction.CallbackContext context);
+        void OnArrows(InputAction.CallbackContext context);
+        void OnAstralArrows(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
