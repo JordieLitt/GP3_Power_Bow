@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dance Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Astra_low
+    m_Weight: 1
+  - m_Path: Astral_Bow_low
+    m_Weight: 1
+  - m_Path: Astral_Bow_low/astral_portion
+    m_Weight: 1
+  - m_Path: Astral_Bow_low/Wood_Portion
+    m_Weight: 1
+  - m_Path: JCenter
+    m_Weight: 1
+  - m_Path: JCenter/JLTip
+    m_Weight: 1
+  - m_Path: JCenter/JLTip/JLMid
+    m_Weight: 1
+  - m_Path: JCenter/JLTip/JLMid/JLEdge
+    m_Weight: 1
+  - m_Path: JCenter/JLTip/JLMid/JLEdge/joint4
+    m_Weight: 1
+  - m_Path: JCenter/JRTip
+    m_Weight: 1
+  - m_Path: JCenter/JRTip/JLMid 1
+    m_Weight: 1
+  - m_Path: JCenter/JRTip/JLMid 1/JLEdge 1
+    m_Weight: 1
+  - m_Path: JCenter/JRTip/JLMid 1/JLEdge 1/joint8
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JLCen
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JLCen/JLMid 2
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JLCen/JLMid 2/JLCen 1
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JRCen
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JRCen/JRMid
+    m_Weight: 1
+  - m_Path: JCenter/JStringCenter/JRCen/JRMid/JREdge
+    m_Weight: 1
+  - m_Path: JWaist
+    m_Weight: 1
+  - m_Path: JWaist/JLHip
+    m_Weight: 0
+  - m_Path: JWaist/JLHip/JLKnee
+    m_Weight: 0
+  - m_Path: JWaist/JLHip/JLKnee/JLFoot
+    m_Weight: 0
+  - m_Path: JWaist/JLHip/JLKnee/JLFoot/JLToe
+    m_Weight: 0
+  - m_Path: JWaist/JRHip
+    m_Weight: 0
+  - m_Path: JWaist/JRHip/JRKnee
+    m_Weight: 0
+  - m_Path: JWaist/JRHip/JRKnee/JRFoot
+    m_Weight: 0
+  - m_Path: JWaist/JRHip/JRKnee/JRFoot/JRToe
+    m_Weight: 0
+  - m_Path: JWaist/JSpine_01
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JKneck
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JKneck/JHead_01
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JKneck/JHead_01/JHead_02
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow/JLWrist
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow/JLWrist/JFinger_01
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow/JLWrist/JFinger_01/JFinger_02
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow/JLWrist/JThumb_01
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JLShoulder/JLElbow/JLWrist/JThumb_01/JThumb_02
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow/JRWrist
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow/JRWrist/JFinger_01
+      1
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow/JRWrist/JFinger_01
+      1/JFinger_02 1
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow/JRWrist/JThumb_01
+      1
+    m_Weight: 1
+  - m_Path: JWaist/JSpine_01/JSpine_02/JSpine_03/JRShoulder/JRElbow/JRWrist/JThumb_01
+      1/JThumb_02 1
+    m_Weight: 1
+  - m_Path: Main_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/BEdge_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/BEdge_GRP/BEdge_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/B1_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/B1_CNTRL/B2_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/B1_CNTRL/B2_GRP/B2_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/T1_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/T1_GRP/T1_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/T1_GRP/T1_CNTRL/T2_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/String_GRP/String_CNTRL/T1_GRP/T1_CNTRL/T2_GRP/T2_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/TEdge_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Bow_CNTRL/TEdge_GRP/TEdge_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/LLeg_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/RLeg_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/Head_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL/LHand_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL/LHand_GRP/Left_Hand_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL/LHand_GRP/Left_Hand_CNTRL/Left_Thumb_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL/LHand_GRP/Left_Hand_CNTRL/LFinger_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/LShldr_GRP/Left_Shldr_CNTRL/LElbow_GRP/Left_Elbow_CNTRL/LWrist_GRP/Left_Wrist_CNTRL/LHand_GRP/Left_Hand_CNTRL/LFinger_GRP/Left_Finger_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP/Right_Wrist_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP/Right_Wrist_CNTRL/RHand_GRP
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP/Right_Wrist_CNTRL/RHand_GRP/Right_Hand_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP/Right_Wrist_CNTRL/RHand_GRP/Right_Hand_CNTRL/Right_Fngr_CNTRL
+    m_Weight: 0
+  - m_Path: Main_CNTRL/Waist_CNTRL/Chest_CNTRL/RShldr_GRP/Right_Shldr_CNTRL/RElbow_GRP/Right_Elbow_CNTRL/RWrist_GRP/Right_Wrist_CNTRL/RHand_GRP/Right_Hand_CNTRL/Right_Thumb_CNTRL
+    m_Weight: 0

@@ -11,7 +11,9 @@ public class Bossfight : MonoBehaviour
     public bool hit;
     public AudioSource ambience;
     public AudioSource bossPlayer;
+    public AudioSource bossSounds;
     private Animator anim;
+    public AudioClip intro;
 
 
     void Start()
@@ -41,9 +43,11 @@ public class Bossfight : MonoBehaviour
 
             if(ambience.isPlaying)
             {
+                anim.enabled = true;
                 ambience.Stop();
                 bossPlayer.Play();
-                anim.enabled = true;
+                PlaySound(intro);
+                
             }
         }
     }
@@ -51,6 +55,11 @@ public class Bossfight : MonoBehaviour
     public void OnDestroy()
     {
         finalPlat.SetActive(true);
+    }
+
+     public void PlaySound(AudioClip clip)
+    {
+        bossSounds.PlayOneShot(clip);
     }
 
 }
