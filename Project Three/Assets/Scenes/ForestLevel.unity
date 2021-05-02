@@ -18949,13 +18949,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You have Defeated the Cyclops of
 
-    Corruption, and brought peace and
-    balance
+    Corruption, and brought peace and balance
 
     to the land. This calls for a celebration. As us
 
-    Spirits say,
-    two rights, are all you need.'
+    Spirits say, two rights, are all you need.'
 --- !u!222 &1084858610
 CanvasRenderer:
   m_ObjectHideFlags: 0
