@@ -12,6 +12,7 @@ public class Target7 : MonoBehaviour
     
     AudioSource targetSource;
     public AudioClip unlocked;
+    public AudioClip complete;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Target7 : MonoBehaviour
                 isOpened = true;
                 gate.transform.position += new Vector3 (0f, 7.45f, 0f);
                 PlaySound(unlocked);
+                PlaySound(complete);
                 Destroy(symbol);
             }
         }

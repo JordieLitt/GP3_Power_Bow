@@ -33,6 +33,7 @@ TagManager:
   - Lever
   - enemy
   - NoPass
+  - Destroy
   layers:
   - Default
   - TransparentFX

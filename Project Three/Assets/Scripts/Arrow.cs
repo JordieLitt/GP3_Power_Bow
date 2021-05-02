@@ -50,10 +50,7 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(col.gameObject.tag == "NoPass")
-        {
-            Destroy(gameObject);
-        }
+       
     }
 
     private void OnTriggerEnter(Collider col)

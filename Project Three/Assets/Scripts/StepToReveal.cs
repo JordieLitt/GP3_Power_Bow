@@ -12,10 +12,16 @@ public class StepToReveal : MonoBehaviour
 
     public bool onTopOf1;
     public bool onTopOf2;
+    public bool complete = false;
+
+    AudioSource targetSource;
+    public AudioClip unlocked;
 
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         path.SetActive(false);
 
         platform1.GetComponent<Renderer>().material = matNormal;
@@ -80,6 +86,11 @@ public class StepToReveal : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        if(collider.gameObject.tag == "Player" && complete == false)
+        {
+            PlaySound(unlocked);
+            complete = true;
+        }
         if(collider.gameObject.tag == "Player")
         {
             onTopOf1 = true;
@@ -87,6 +98,7 @@ public class StepToReveal : MonoBehaviour
 
         if(collider.tag == "Astra2")
         {
+            PlaySound(unlocked);
             onTopOf2 = true;
         }
     }
@@ -97,5 +109,10 @@ public class StepToReveal : MonoBehaviour
         {
             onTopOf1 = false;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

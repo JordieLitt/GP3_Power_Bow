@@ -10,9 +10,14 @@ public class Lever : MonoBehaviour
     public GameObject platforms;
     public GameObject gate;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         platforms.SetActive(true);
         message.SetActive(false);
     }
@@ -29,6 +34,7 @@ public class Lever : MonoBehaviour
         {
             if(hasPulled == false)
             {
+                PlaySound(unlocked);
                 hasPulled = true;
                 platforms.SetActive(false);
                 gate.transform.position  += new Vector3 (0f, 7.45f, 0f);
@@ -47,5 +53,10 @@ public class Lever : MonoBehaviour
         {
             inRange = true;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

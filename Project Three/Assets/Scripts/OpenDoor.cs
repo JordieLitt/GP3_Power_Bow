@@ -16,9 +16,16 @@ public class OpenDoor : MonoBehaviour
     public GameObject target;
     private GameObject m_plate;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+    public bool complete = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         target.SetActive(false);
         pPlate1.SetActive(false);
         pPlate2.SetActive(true);
@@ -34,8 +41,10 @@ public class OpenDoor : MonoBehaviour
             StartCoroutine(projectionEnd());
         }
 
-        if(projection == true && astraOn == true && astra2On)
+        if(projection == true && astraOn == true && astra2On == true && complete == false)
         {
+            PlaySound(unlocked);
+            complete = true;
             isOpened = true;
             target.SetActive(true);
         }
@@ -54,14 +63,19 @@ public class OpenDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Player" && projection == true)
+        if(collider.gameObject.tag == "Player")
+        {
+            PlaySound(unlocked);
+        }
+
+        if(collider.gameObject.tag == "Player" && projection == true)
         {
             astraOn = true;
             pPlate1.SetActive(true);
             pPlate2.SetActive(false);
         }
 
-        if(collider.tag == "Astra2" && projection == true)
+        if(collider.gameObject.tag == "Astra2" && projection == true)
         {
             astraOn = true;
             pPlate1.SetActive(true);
@@ -71,7 +85,7 @@ public class OpenDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if(collider.tag == "Player" && projection == false)
+        if(collider.gameObject.tag == "Player" && projection == false)
         {
             astraOn = false;
         }
@@ -81,5 +95,10 @@ public class OpenDoor : MonoBehaviour
     {
         yield return new WaitForSeconds(30);
         projection = false;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }
