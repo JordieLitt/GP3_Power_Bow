@@ -21,11 +21,12 @@ public class eyeShot : MonoBehaviour
 
     void Start()
     {
-       lives = 3;
 
-       platform2.SetActive(false);
-       platform3.SetActive(false); 
-       cyclopsAnis = GetComponentInParent<Animator>();
+        lives = 3;
+
+        platform2.SetActive(false);
+        platform3.SetActive(false); 
+        cyclopsAnis = GetComponentInParent<Animator>();
     }
 
     void Update()
@@ -39,6 +40,7 @@ public class eyeShot : MonoBehaviour
     {
         if(col.gameObject.tag == "Arrow2")
         {
+
             if(!isInvincible)
             {  
             lives -= 1;

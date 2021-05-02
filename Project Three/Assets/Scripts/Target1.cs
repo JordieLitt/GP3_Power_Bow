@@ -17,7 +17,7 @@ public class Target1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Arrow2")
+        if(col.gameObject.tag == "Arrow2")
         {
             if(isOpened == false)
             {
@@ -29,7 +29,7 @@ public class Target1 : MonoBehaviour
         
     }
 
-     public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip)
     {
         targetSource.PlayOneShot(clip);
     }

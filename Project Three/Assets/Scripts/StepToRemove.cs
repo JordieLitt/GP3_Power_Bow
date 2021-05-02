@@ -6,17 +6,21 @@ public class StepToRemove : MonoBehaviour
 {
     public GameObject platforms;
 
+    public GameObject cubes1, cubes2, cubes3;
+
     public bool isSteppedOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        platforms.SetActive(true);
+        cubes1.SetActive(true);
+        cubes2.SetActive(true);
+        cubes3.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Player")
+        if(collider.gameObject.tag == "Player")
         {
             isSteppedOn = true;
         }
@@ -27,7 +31,9 @@ public class StepToRemove : MonoBehaviour
     {
         if(isSteppedOn == true)
         {
-            platforms.SetActive(false);
+            cubes1.SetActive(false);
+            cubes2.SetActive(true);
+            cubes3.SetActive(true);
         }
     }
 }

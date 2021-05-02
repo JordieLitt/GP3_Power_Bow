@@ -11,14 +11,15 @@ public class Target6 : MonoBehaviour
     public GameObject symbol;
     AudioSource targetSource;
     public AudioClip unlocked;
+
     void Start()
     {
-        targetSource= GetComponent<AudioSource>();
+        targetSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Arrow2")
+        if(col.gameObject.tag == "Arrow2")
         {
             if(isOpened == false)
             {
@@ -28,7 +29,6 @@ public class Target6 : MonoBehaviour
                 Destroy(symbol.gameObject);
             }
         }
-        
     }
 
     public void PlaySound(AudioClip clip)

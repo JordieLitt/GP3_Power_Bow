@@ -9,12 +9,15 @@ public class CrystalFunctions : MonoBehaviour
     public bool atCrystal= false;
     public bool alreadyCleansed = false;
     public int expectedCount = 0;
+    AudioSource cleanseSource;
+    public AudioClip cleanseSound;
 
    
 
     void Start()
     {
         GetComponent<Renderer>().material = baseMat;
+        cleanseSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -63,6 +66,7 @@ public class CrystalFunctions : MonoBehaviour
                 cleanseMessage.SetActive(true);
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    PlaySound(cleanseSound);
                     CrystalChecker.instance.crystals += 1;
                     cleanseMessage.SetActive(false);
                 }
@@ -73,5 +77,9 @@ public class CrystalFunctions : MonoBehaviour
             //close message
             cleanseMessage.SetActive(false);
         }
+    }
+    public void PlaySound(AudioClip clip)
+    {
+        cleanseSource.PlayOneShot(clip);
     }
 }

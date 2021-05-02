@@ -9,17 +9,31 @@ public class Target7 : MonoBehaviour
     public GameObject gate;
 
     public GameObject symbol;
+    
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
+    void Start()
+    {
+        targetSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Arrow2")
+        if(col.gameObject.tag == "Arrow2")
         {
             if(isOpened == false)
             {
                 isOpened = true;
                 gate.transform.position += new Vector3 (0f, 7.45f, 0f);
+                PlaySound(unlocked);
                 Destroy(symbol);
             }
         }
+    }
+
+     public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

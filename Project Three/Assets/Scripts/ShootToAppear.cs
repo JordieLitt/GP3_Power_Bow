@@ -8,9 +8,14 @@ public class ShootToAppear : MonoBehaviour
 
     public GameObject item;
 
+    AudioSource targetSource;
+    public AudioClip complete;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource= GetComponent<AudioSource>();
+
         item.SetActive(false);
     }
 
@@ -23,15 +28,21 @@ public class ShootToAppear : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider col)
     {
-        if(collider.tag == "Arrow2")
+        if(col.gameObject.tag == "Arrow2")
         {
             if(isShot == false)
             {
                 isShot = true;
                 item.SetActive(true);
+                PlaySound(complete);
             }
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

@@ -162,9 +162,9 @@ GameObject:
   - component: {fileID: 3534803604628316270}
   - component: {fileID: 6743488772328598319}
   - component: {fileID: 1557141233911920190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

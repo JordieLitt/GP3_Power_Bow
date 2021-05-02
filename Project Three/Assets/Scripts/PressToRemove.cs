@@ -8,10 +8,13 @@ public class PressToRemove : MonoBehaviour
     public GameObject target1;
     public GameObject target2;
     public bool isSteppedOn = false;
+    AudioSource targetSource;
+    public AudioClip waterDrain;
 
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
         platform.SetActive(true);
         platform2.SetActive(true);
         target1.SetActive(true);
@@ -25,6 +28,7 @@ public class PressToRemove : MonoBehaviour
             if(isSteppedOn == false)
             {
                 isSteppedOn = true;
+                PlaySound(waterDrain);
                 platform.SetActive(false);
                 platform2.SetActive(false);
                 target1.SetActive(false);
@@ -32,10 +36,8 @@ public class PressToRemove : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-       
+        targetSource.PlayOneShot(clip);
     }
 }

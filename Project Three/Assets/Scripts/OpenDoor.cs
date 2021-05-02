@@ -50,12 +50,6 @@ public class OpenDoor : MonoBehaviour
             astra2On = true;
             check = true;
         }
-
-        if(projection == true)
-        {
-            pPlate1.SetActive(true);
-            pPlate2.SetActive(false);
-        }
     }
 
     private void OnTriggerEnter(Collider collider)

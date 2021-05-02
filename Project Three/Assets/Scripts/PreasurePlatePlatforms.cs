@@ -7,12 +7,19 @@ public class PreasurePlatePlatforms : MonoBehaviour
     public GameObject platforms;
     public bool steppedOnOne = false;
     public bool steppedOnTwo = false;
+
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
+    public AudioClip complete;
     
 
     bool isDown = false;
 
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         platforms.SetActive(false);
     }
     
@@ -20,6 +27,8 @@ public class PreasurePlatePlatforms : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
+            PlaySound(unlocked);
+
             if(steppedOnOne == false)
             {
                 steppedOnOne = true;
@@ -34,9 +43,15 @@ public class PreasurePlatePlatforms : MonoBehaviour
         {
             if(!isDown)
             {
+                PlaySound(complete);
                 platforms.SetActive(true);
                 isDown = true;
             }
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

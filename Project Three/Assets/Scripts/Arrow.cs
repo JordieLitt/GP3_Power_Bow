@@ -19,7 +19,7 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(myBody.velocity);
+        transform.rotation = Quaternion.Euler(0, 149, 90);
         PlayerTransform = GameObject.Find("Player").transform;
         audioSource= GetComponent<AudioSource>();
     }
@@ -35,13 +35,13 @@ public class Arrow : MonoBehaviour
 
         if(!hitSomething)
         {
-            transform.rotation = Quaternion.LookRotation(myBody.velocity);
+            transform.rotation = Quaternion.Euler(0, 149, 90);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision col)
     {
-        if(collision.collider.tag == "Ground")
+        if(col.gameObject.tag == "Ground")
         {
             hitSomething = true;
             Stick();
@@ -50,19 +50,17 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(collision.collider.tag == "NoPass")
+        if(col.gameObject.tag == "NoPass")
         {
             Destroy(gameObject);
-            hitSomething = false;
         }
     }
 
-    private void OnTriggerEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if(collision.collider.tag == "NoPass")
+        if(col.gameObject.tag == "NoPass")
         {
             Destroy(gameObject);
-            hitSomething = false;
         }
     }
 

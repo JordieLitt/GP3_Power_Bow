@@ -18,9 +18,14 @@ public class ShootToMove : MonoBehaviour
     private float journeyLength;
     private float journeyLength2;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         startTime = Time.time;
 
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
@@ -47,10 +52,12 @@ public class ShootToMove : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider col)
     {
-        if(collider.tag == "Arrow2")
+        if(col.gameObject.tag == "Arrow2")
         {
+            PlaySound(unlocked);
+
             if(isShot != true)
             {
                 isShot = true;
@@ -77,5 +84,10 @@ public class ShootToMove : MonoBehaviour
       {
         collision.collider.transform.SetParent(null);
       }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

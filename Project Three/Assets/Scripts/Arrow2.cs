@@ -14,7 +14,7 @@ public class Arrow2 : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(myBody.velocity);
+        transform.rotation = Quaternion.Euler(0, 142, 90);
     }
 
     // Update is called once per frame
@@ -28,19 +28,13 @@ public class Arrow2 : MonoBehaviour
 
         if(!hitSomething)
         {
-            transform.rotation = Quaternion.LookRotation(myBody.velocity);
+            transform.rotation = Quaternion.Euler(0, 142, 90);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision col)
     {
-        if(collision.collider.tag != "Arrow")
-        {
-            hitSomething = true;
-            Stick();
-        }
-
-        if(collision.collider.tag == "Target1")
+        if(col.gameObject.tag == "Target1")
         {
             lifeTimer2 = 15f;
         }

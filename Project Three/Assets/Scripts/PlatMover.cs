@@ -13,6 +13,8 @@ public class PlatMover : MonoBehaviour
 
     private float journeyLength;
 
+    private GameObject m_plate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class PlatMover : MonoBehaviour
 
         // Calculate the journey length.
           journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
-     
+
+          m_plate = GameObject.FindWithTag("PPlate1");
     }
 
     // Update is called once per frame
@@ -35,6 +38,11 @@ public class PlatMover : MonoBehaviour
 
         // Set our position as a fraction of the distance between the markers and pingpong the movement.
           transform.position = Vector3.Lerp(startMarker.position, endMarker.position, Mathf.PingPong (fracJourney, 1));
+
+          if(m_plate.GetComponent<StepToRemove>().isSteppedOn)
+          {
+            endMarker.position = transform.position;
+          }
     }
 
     // Another approach aside from parenting, is to add the velocity of the platform to the player basically.

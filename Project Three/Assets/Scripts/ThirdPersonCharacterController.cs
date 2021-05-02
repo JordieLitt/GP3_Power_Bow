@@ -46,9 +46,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     public AudioClip astraDamage;
     public AudioClip astraFall;
     public AudioClip astraJump;
-    public GameObject Message2;
     
-  
     void Start()
     {
         lives = 4;
@@ -70,29 +68,6 @@ public class ThirdPersonCharacterController : MonoBehaviour
         RaycastHit hit2;
         Vector3 forward2 = transform.TransformDirection(Vector3.up * 0.75f) * distanceAhead2;
         Debug.DrawRay(transform.position, forward2, Color.blue);
-
-        if(Physics.Raycast(transform.position,(forward2), out hit2))
-        {
-           if(hit2.collider.tag == "Lever")
-            {
-                inRange2 = true;
-            }
-
-            else
-            {
-                inRange2 = false;
-            }
-        }
-
-        //if(inRange2 == true)
-        //{
-        //    Message2.SetActive(true);
-        //}
-
-        //if(inRange2 == false)
-        //{
-        //    Message2.SetActive(false);
-        //}
 
         if(isInvincible)
         {

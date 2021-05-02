@@ -7,18 +7,29 @@ public class HubPressure : MonoBehaviour
     public GameObject platforms;
 
     public bool astraOn = false;
+
+    AudioSource targetSource;
+    public AudioClip unlocked;
+    public bool activated =false;
    
     // Start is called before the first frame update
     void Start()
     {
         platforms.SetActive(false);
+        targetSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.tag == "Player")
         {
+            if(activated == false)
+            {
+                PlaySound(unlocked);
+            }
+            
             astraOn = true;
+            activated = true;
         }
     }
 
@@ -29,5 +40,10 @@ public class HubPressure : MonoBehaviour
         {
             platforms.SetActive(true);
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }
