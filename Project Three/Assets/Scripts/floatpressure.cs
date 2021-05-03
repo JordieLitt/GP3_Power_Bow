@@ -7,6 +7,14 @@ public class floatpressure : MonoBehaviour
     public GameObject platforms2;
     public bool projection = false;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
+    void Start()
+    {
+        targetSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
@@ -20,11 +28,13 @@ public class floatpressure : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
+            PlaySound(unlocked);
             platforms2.transform.position = new Vector3(317, 174, 141);
         }
 
         if(collider.tag == "Astra2")
         {
+            PlaySound(unlocked);
             platforms2.transform.position = new Vector3(317, 174, 141);
         }
     }
@@ -46,5 +56,10 @@ public class floatpressure : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         projection = false;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

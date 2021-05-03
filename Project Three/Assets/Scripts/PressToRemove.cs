@@ -10,6 +10,7 @@ public class PressToRemove : MonoBehaviour
     public bool isSteppedOn = false;
     AudioSource targetSource;
     public AudioClip waterDrain;
+    public AudioClip unlock;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PressToRemove : MonoBehaviour
         {
             if(isSteppedOn == false)
             {
+                PlaySound(unlock);
                 isSteppedOn = true;
                 PlaySound(waterDrain);
                 platform.SetActive(false);

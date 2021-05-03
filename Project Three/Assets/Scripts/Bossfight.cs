@@ -36,7 +36,7 @@ public class Bossfight : MonoBehaviour
             Vector3 b = target.position;
             transform.position = Vector3.MoveTowards(a, b, speed);
 
-            Invoke("FireLaser",fireLength);
+            // Invoke("FireLaser",fireLength);
         }
 
     }
@@ -53,7 +53,7 @@ public class Bossfight : MonoBehaviour
                 ambience.Stop();
                 bossPlayer.Play();
                 PlaySound(intro);
-                Volleys();
+                // Volleys();
             }
         }
     }
@@ -67,27 +67,27 @@ public class Bossfight : MonoBehaviour
     {
         bossSounds.PlayOneShot(clip);
     }
-    public void FireLaser()
-    {
-        laserEye.SetActive(true);
-        isFiring = true;
-    }
-    public void CeaseFire()
-    {
-        laserEye.SetActive(false);
-        isFiring = false;
-    }
+    // public void FireLaser()
+    // {
+    //     laserEye.SetActive(true);
+    //     isFiring = true;
+    // }
+    // public void CeaseFire()
+    // {
+    //     laserEye.SetActive(false);
+    //     isFiring = false;
+    // }
 
-    public void Volleys()
-    {
-        if(!isFiring)
-        {
-            Invoke("FireLaser",fireLength);
-        }
-        if(isFiring)
-        {
-            Invoke("CeaseFire",coolDown);
-        }
-    }
+    // public void Volleys()
+    // {
+    //     if(!isFiring)
+    //     {
+    //         Invoke("FireLaser",fireLength);
+    //     }
+    //     if(isFiring)
+    //     {
+    //         Invoke("CeaseFire",coolDown);
+    //     }
+    // }
 
 }

@@ -11,9 +11,14 @@ public class CubeAppear : MonoBehaviour
     public bool onTopOf1;
     public bool onTopOf2;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         cube1.GetComponent<Renderer>().material = matNormal;
         cube2.GetComponent<Renderer>().material = matNormal;
         cube3.GetComponent<Renderer>().material = matNormal;
@@ -55,11 +60,13 @@ public class CubeAppear : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
+            PlaySound(unlocked);
             onTopOf1 = true;
         }
 
         if(collider.tag == "Astra2")
         {
+            PlaySound(unlocked);
             onTopOf2 = true;
         }
     }
@@ -70,5 +77,10 @@ public class CubeAppear : MonoBehaviour
         {
             onTopOf1 = false;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

@@ -34,6 +34,7 @@ TagManager:
   - enemy
   - NoPass
   - Destroy
+  - gate
   layers:
   - Default
   - TransparentFX

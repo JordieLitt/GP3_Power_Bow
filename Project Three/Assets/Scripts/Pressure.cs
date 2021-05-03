@@ -7,8 +7,13 @@ public class Pressure : MonoBehaviour
     public GameObject platforms;
     public bool projection = false;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         platforms.SetActive(false);
     }
 
@@ -30,6 +35,7 @@ public class Pressure : MonoBehaviour
 
         if(collider.tag == "Astra2")
         {
+            PlaySound(unlocked);
             platforms.SetActive(true);
         }
     }
@@ -51,5 +57,10 @@ public class Pressure : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         projection = false;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

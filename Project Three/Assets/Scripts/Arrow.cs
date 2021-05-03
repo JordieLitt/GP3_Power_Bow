@@ -12,8 +12,8 @@ public class Arrow : MonoBehaviour
     public Transform TeleportGoal;
 
     //Audio
-     AudioSource audioSource;
-    public AudioClip astralImpact;
+    public AudioSource audioSource;
+    public AudioClip teleport;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class Arrow : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
         transform.rotation = Quaternion.Euler(0, 149, 90);
         PlayerTransform = GameObject.Find("Player").transform;
-        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,14 +42,12 @@ public class Arrow : MonoBehaviour
     {
         if(col.gameObject.tag == "Ground")
         {
+            PlaySound(teleport);
             hitSomething = true;
             Stick();
             PlayerTransform.position = TeleportGoal.position;
-            PlaySound(astralImpact);
             Destroy(gameObject);
         }
-
-       
     }
 
     private void OnTriggerEnter(Collider col)
@@ -65,6 +62,7 @@ public class Arrow : MonoBehaviour
     {
         myBody.constraints = RigidbodyConstraints.FreezeAll;
     }
+
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);

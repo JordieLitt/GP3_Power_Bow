@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 995331095601471527}
   - component: {fileID: 3041292121918739693}
   - component: {fileID: 354983243}
-  - component: {fileID: 354983244}
-  - component: {fileID: 354983245}
+  - component: {fileID: 460119864}
   m_Layer: 0
   m_Name: Crystal_UV (1)
   m_TagString: Crystal
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3545506508693747000}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 610.493, y: -0.621, z: 90.854}
-  m_LocalScale: {x: 870.0496, y: 589.0775, z: 870.0496}
+  m_LocalScale: {x: 195.84619, y: 132.60002, z: 195.84619}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.06, z: 0.04}
   m_Center: {x: 0.0000000023283064, y: -0.00940534, z: -0.0000000023283064}
---- !u!114 &354983244
+--- !u!114 &460119864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,22 +105,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3545506508693747000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21326389941824349a4e08d44c49913f, type: 3}
+  m_Script: {fileID: 11500000, guid: 157e652b749ad5041a695d2e934ee550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseMat: {fileID: 2100000, guid: eac6db83e0554ed4c9d80361deb85090, type: 2}
   cleanseMat: {fileID: 2100000, guid: a4137158f953dc347bd3e9b2940e440f, type: 2}
-  expectedCount: 1
---- !u!114 &354983245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3545506508693747000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bbd383be16b234388124f90a6824c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: {fileID: 0}
+  cleanseMessage: {fileID: 0}
+  atCrystal: 0
+  alreadyCleansed: 0
+  expectedCount: 2
+  cleanseSound: {fileID: 8300000, guid: 974ccbd9d52798e4b8c336693a9d8ecd, type: 3}

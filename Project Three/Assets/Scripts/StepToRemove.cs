@@ -10,9 +10,14 @@ public class StepToRemove : MonoBehaviour
 
     public bool isSteppedOn = false;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         cubes1.SetActive(true);
         cubes2.SetActive(true);
         cubes3.SetActive(true);
@@ -22,6 +27,7 @@ public class StepToRemove : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
+            PlaySound(unlocked);
             isSteppedOn = true;
         }
     }
@@ -35,5 +41,10 @@ public class StepToRemove : MonoBehaviour
             cubes2.SetActive(true);
             cubes3.SetActive(true);
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }

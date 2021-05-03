@@ -6,8 +6,13 @@ public class float2plat : MonoBehaviour
 {
     public GameObject target;
 
+    AudioSource targetSource;
+    public AudioClip unlocked;
+
     void Start()
     {
+        targetSource = GetComponent<AudioSource>();
+
         target.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -15,7 +20,13 @@ public class float2plat : MonoBehaviour
     {
         if(collider.tag == "Player")
         {
+            PlaySound(unlocked);
             target.GetComponent<MeshRenderer>().enabled = true;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        targetSource.PlayOneShot(clip);
     }
 }
