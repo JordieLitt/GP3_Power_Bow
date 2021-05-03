@@ -1055,6 +1055,7 @@ MonoBehaviour:
   matChanged: {fileID: 2100000, guid: f790e8c2f448622488e7bc348fa04ad8, type: 2}
   onTopOf1: 0
   onTopOf2: 0
+  complete: 0
   unlocked: {fileID: 8300000, guid: c7d9921ed460ab24aa4c3c7c67082ea2, type: 3}
 --- !u!65 &73379138
 BoxCollider:
@@ -2843,6 +2844,7 @@ MonoBehaviour:
   pPlate2: {fileID: 2070390022}
   target: {fileID: 473415977}
   unlocked: {fileID: 8300000, guid: c7d9921ed460ab24aa4c3c7c67082ea2, type: 3}
+  complete: 0
 --- !u!65 &141232227
 BoxCollider:
   m_ObjectHideFlags: 0

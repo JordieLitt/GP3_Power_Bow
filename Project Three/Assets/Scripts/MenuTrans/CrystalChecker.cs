@@ -7,6 +7,7 @@ public class CrystalChecker : MonoBehaviour
      public static CrystalChecker instance;
      
      public int crystals;
+     public bool entered;
      
      void Awake()
      {
@@ -18,5 +19,6 @@ public class CrystalChecker : MonoBehaviour
          DontDestroyOnLoad(this);
 
          crystals = 0;
+         entered = false;
      }
  }
